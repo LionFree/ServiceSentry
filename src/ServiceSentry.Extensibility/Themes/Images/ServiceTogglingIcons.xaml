@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--<Image x:Key="RestartServiceIcon" x:Shared="False" Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Images/Small/RestartService.png" />-->
+
+
+    <Image x:Key="ServiceImageStartKey" x:Shared="False" 
+           RenderOptions.BitmapScalingMode="HighQuality" Stretch = "None"
+           Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Images/Small/StartService.png" />
+
+    <Image x:Key="ServiceImageStopKey" x:Shared="False" 
+           RenderOptions.BitmapScalingMode="HighQuality" Stretch = "None"
+           Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Images/Small/StopService.png" />
+
+    <Image x:Key="ServiceImageRestartKey" x:Shared="False" 
+           RenderOptions.BitmapScalingMode="HighQuality" Stretch = "None"
+           Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Images/Small/RestartService.png" />
+    
+</ResourceDictionary>

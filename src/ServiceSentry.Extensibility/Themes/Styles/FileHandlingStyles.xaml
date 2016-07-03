@@ -1,0 +1,56 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:extensibility="clr-namespace:ServiceSentry.Extensibility">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="MenuItemStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="FileLinkStyleKey" TargetType="{x:Type MenuItem}" BasedOn="{StaticResource ContextMenuItemStyle}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <MenuItem x:Name="rootItem" Style="{StaticResource ContextMenuItemStyle}">
+                        <MenuItem.Header>
+                            <TextBlock Text="{Binding DisplayName}" />
+                        </MenuItem.Header>
+                        <MenuItem.ToolTip>
+                            <TextBlock Text="{Binding ParsedName}" />
+                        </MenuItem.ToolTip>
+                    </MenuItem>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="OpenFolderStyleKey" TargetType="{x:Type MenuItem}" BasedOn="{StaticResource ContextMenuItemStyle}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <MenuItem Header="{x:Static extensibility:Strings.Verb_OpenContainingFolder}" 
+                              Command ="{Binding OpenFolderCommand}"
+                              CommandParameter="{Binding Path=Directory}"
+                              Style="{StaticResource ContextMenuItemStyle}"/>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="FileCopyStyleKey" TargetType="{x:Type MenuItem}" BasedOn="{StaticResource ContextMenuItemStyle}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <MenuItem Header="{x:Static extensibility:Strings.Verb_CopyFile}" 
+                              Command ="{Binding CopyFileCommand}"
+                              CommandParameter="{Binding Path=ParsedName}"
+                              Style="{StaticResource ContextMenuItemStyle}"
+                              />
+                    <!--Source={StaticResource FileLinkCommands}, Path=-->
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+</ResourceDictionary>

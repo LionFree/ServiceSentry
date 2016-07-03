@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0956E6FF-53D2-4331-BD3B-7637206D2142}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ServiceSentry.Model</RootNamespace>
+    <AssemblyName>ServiceSentry.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>%28none%29</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+    <IntermediateOutputPath>C:\Users\CURTIS~1.KAL\AppData\Local\Temp\vs5F8A.tmp\x64\Release\</IntermediateOutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IntermediateOutputPath>C:\Users\CURTIS~1.KAL\AppData\Local\Temp\vs5F8A.tmp\x64\Debug\</IntermediateOutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)Build\Unified.props" Condition="Exists('$(SolutionDir)Build\Unified.props')" />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE;CONTRACTS_FULL</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IntermediateOutputPath>C:\Users\CURTIS~1.KAL\AppData\Local\Temp\vs5F8A.tmp\Debug\</IntermediateOutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <DebugSymbols>true</DebugSymbols>
+    <IntermediateOutputPath>C:\Users\CURTIS~1.KAL\AppData\Local\Temp\vs5F8A.tmp\Release\</IntermediateOutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\Communication\ClientBuilder.cs" />
+    <Compile Include="Communication\PollResult.cs" />
+    <Compile Include="Data Classes\Serializable Classes\WardenServerDetails.cs" />
+    <Compile Include="Events\MonitorErrorEventHandler.cs" />
+    <Compile Include="Email\EmailBuilder.cs" />
+    <Compile Include="Email\Emailer.cs" />
+    <Compile Include="ModelClassFactory.cs" />
+    <Compile Include="Configuration\ConfigFileHandler.cs" />
+    <Compile Include="Client\ServiceTogglingBehavior.cs" />
+    <Compile Include="Data Classes\Enumerations\ServiceState.cs" />
+    <Compile Include="Data Classes\Serializable Classes\ServiceList.cs" />
+    <Compile Include="Plugin Infrastructure\FileListExtension.cs" />
+    <Compile Include="Plugin Infrastructure\IFileListExtension.cs" />
+    <Compile Include="Plugin Infrastructure\ImportedFileList.cs" />
+    <Compile Include="Plugin Infrastructure\ImportedServicesList.cs" />
+    <Compile Include="Plugin Infrastructure\IServiceListExtension.cs" />
+    <Compile Include="Plugin Infrastructure\ServiceListExtension.cs" />
+    <Compile Include="Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Data Classes\TrackingList.cs" />
+    <Compile Include="Communication\SubscriptionPacket.cs" />
+    <Compile Include="Client\Communication\ClientList.cs" />
+    <Compile Include="Client\Communication\MonitorServiceWatchdog.cs" />
+    <Compile Include="Client\Communication\ClientLocalMediator.cs" />
+    <Compile Include="Communication\IMonitorService.cs" />
+    <Compile Include="Client\ServiceNameLocator.cs" />
+    <Compile Include="Configuration\ConfigFileSerializer.cs" />
+    <Compile Include="Client\ServiceListBehavior.cs" />
+    <Compile Include="Data Classes\Serializable Classes\Service.cs" />
+    <Compile Include="Configuration\ConfigFile.cs" />
+    <Compile Include="Events\Arguments\ServiceWorkEventArgs.cs" />
+    <Compile Include="ExternalFiles\LogArchiver.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="ExternalFiles\ExternalFileBehavior.cs" />
+    <Compile Include="Data Classes\Serializable Classes\ExternalFile.cs" />
+    <Compile Include="Data Classes\Serializable Classes\FileList.cs" />
+    <Compile Include="Client\ServiceAction.cs" />
+    <Compile Include="Events\StatusChangeEventHandler.cs" />
+    <Compile Include="Properties\InternalsVisibleTo.cs" />
+    <Compile Include="ExternalFiles\FileChangedEventArgs.cs" />
+    <Compile Include="Data Classes\Serializable Classes\LoggingDetails.cs" />
+    <Compile Include="Data Classes\Serializable Classes\NotificationSettings.cs" />
+    <Compile Include="Data Classes\Serializable Classes\ServiceDetails.cs" />
+    <Compile Include="Data Classes\ServiceInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Data Classes\Enumerations\ServiceCustomCommands.cs" />
+    <Compile Include="Services\LocalServiceFinder.cs" />
+    <Compile Include="Client\Communication\ClientMediator.cs" />
+    <Compile Include="Extension Methods\StatusToStateExtension.cs" />
+    <Compile Include="Services\ServiceWrapper.cs" />
+    <Compile Include="UNTESTED\ResourceManagerWrapper.cs" />
+    <Compile Include="Server\Responder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceSentry.Armor\ServiceSentry.Armor.csproj">
+      <Project>{f2896144-9bf1-4229-9ef3-5061444dba38}</Project>
+      <Name>ServiceSentry.Armor</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceSentry.Common\ServiceSentry.Common.csproj">
+      <Project>{5d6024eb-20fc-4c28-b7f5-d96eb952c61e}</Project>
+      <Name>ServiceSentry.Common</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceSentry.Extensibility\ServiceSentry.Extensibility.csproj">
+      <Project>{C60A796A-FE67-4196-A0DB-14A23FA91862}</Project>
+      <Name>ServiceSentry.Extensibility</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>echo f | xcopy /Y /f "$(TargetPath)" "$(SolutionDir)build\$(ConfigurationName)" &gt;nul</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

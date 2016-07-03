@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Styles/CommonControlStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Styles/Colors.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Styles/ListViewItem.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Styles/TabStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Styles/MenuStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Generic.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+</ResourceDictionary>

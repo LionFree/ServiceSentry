@@ -1,0 +1,67 @@
+﻿<Window x:Class="ServiceSentry.Client.UNTESTED.Views.Dialogs.OptionsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:client="clr-namespace:ServiceSentry.Client"
+
+        x:Name="Window" Title="{x:Static client:Strings.OptionsView_Title}" 
+        
+        Width="750" MinHeight="475"
+        SizeToContent="Height"
+        Icon="/Views/Resources/Images/ApplicationIcon.ico"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="ToolWindow">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Styles/TabStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.Background>
+        <StaticResource ResourceKey="WindowBackgroundColor" />
+    </Window.Background>
+    
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <TabControl x:Name="Tabs"
+                    Margin="6,1,6,0"
+                    Grid.Row="0"
+                    ItemsSource="{Binding Tabs}">
+            <TabControl.ItemContainerStyle>
+                <Style TargetType="TabItem" BasedOn="{StaticResource TabItemStyle}" />
+            </TabControl.ItemContainerStyle>
+        </TabControl>
+
+        <StackPanel Grid.Row="1" Margin="5"
+                Orientation="Horizontal" HorizontalAlignment="Right">
+            
+            <Button x:Name="CancelButton"
+                    HorizontalAlignment="Right"
+                    Width="90" Margin="5"
+                    Content="{x:Static client:Strings.ButtonText_Cancel}"
+                    VerticalAlignment="Bottom"
+                    TabIndex="11" 
+                    Command="{Binding RefreshSettingsCommand}"
+                    Click="OnButtonClick"
+                    />
+
+            <Button x:Name="OkButton"
+                    Content="{x:Static client:Strings.ButtonText_OK}"
+                    VerticalAlignment="Bottom"
+                    Height="21.68" Margin="5"
+                    IsDefault="True" TabIndex="10" Width="90" 
+                    HorizontalAlignment="Right" 
+                    Command="{Binding CommitChangesCommand}"
+                    Click="OnButtonClick"
+                    />
+            
+
+        </StackPanel>
+    </Grid>
+</Window>

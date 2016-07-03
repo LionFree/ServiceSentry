@@ -1,0 +1,500 @@
+﻿<Window x:Class="ServiceSentry.Client.UNTESTED.Views.Dialogs.ServiceParametersView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:properties="clr-namespace:ServiceSentry.Client.Properties"
+        xmlns:model="clr-namespace:ServiceSentry.Model;assembly=ServiceSentry.Model"
+        xmlns:converters="clr-namespace:ServiceSentry.Client.UNTESTED.Views.Converters"
+        xmlns:ctrl="clr-namespace:ServiceSentry.Extensibility.Controls;assembly=ServiceSentry.Extensibility"
+        xmlns:client="clr-namespace:ServiceSentry.Client"
+        Title="{x:Static client:Strings.ServiceParametersView_Title}"
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterOwner"
+        Icon="/Views/Resources/Images/ApplicationIcon.ico"
+        Height="300" Width="750">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Styles/Colors.xaml" />
+                <ResourceDictionary
+                    Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Images/ApplicationIcons.xaml" />
+                <ResourceDictionary
+                                Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Styles/SeparatorStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <ObjectDataProvider x:Key="Settings" ObjectType="{x:Type properties:Settings}" />
+            <converters:PathShorteningMultiConverter x:Key="PathShorteningMultiConverter" />
+            <converters:HasValueConverter x:Key="HasValueConverter" />
+            <converters:LogFileParameterConverter x:Key="LogFileParameterConverter" />
+            <StaticResource ResourceKey="WindowBackgroundColor" />
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Margin="5 0" x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MaxWidth="15" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition MaxWidth="15" />
+        </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <Style TargetType="FrameworkElement" x:Key="BaseStyleKey">
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style>
+
+            <Style TargetType="Control" BasedOn="{StaticResource BaseStyleKey}" x:Key="BoxStyleKey">
+                <Setter Property="BorderBrush" Value="DarkGray" />
+                <Setter Property="BorderThickness" Value="1" />
+            </Style>
+
+            <Style TargetType="TextBlock" BasedOn="{StaticResource BaseStyleKey}">
+                <Setter Property="HorizontalAlignment" Value="Right" />
+            </Style>
+
+            <Style TargetType="TextBox" BasedOn="{StaticResource BoxStyleKey}" />
+
+            <Style TargetType="ComboBox" BasedOn="{StaticResource BoxStyleKey}" />
+
+            <Style TargetType="CheckBox" BasedOn="{StaticResource BaseStyleKey}" />
+
+        </Grid.Resources>
+
+
+        <TabControl Grid.ColumnSpan="5">
+            <TabControl.Resources>
+
+                <DataTemplate DataType="model:ExternalFile" x:Key="FileNameTemplate">
+                    <Border x:Name="FileNameBorder" BorderThickness="0">
+                        <TextBlock x:Name="FileNameTextBlock"
+                                   ToolTip="{Binding FullPath}">
+                            <TextBlock.Text>
+                                <MultiBinding Converter="{StaticResource PathShorteningMultiConverter}"
+                                              ConverterParameter="200.0">
+                                    <MultiBinding.Bindings>
+                                        <Binding Path="FullPath" />
+                                        <Binding ElementName="FileNameBorder" Path="ActualWidth" />
+                                    </MultiBinding.Bindings>
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </Border>
+                </DataTemplate>
+
+                <DataTemplate x:Key="FileCommonNameTemplate" DataType="model:ExternalFile">
+                    <DockPanel LastChildFill="True">
+                        <Button Click="OnRemoveItemClick" HorizontalAlignment="Left" CommandParameter="{Binding}"
+                                ToolTip="{x:Static client:Strings.ButtonText_RemoveFile}"
+                                DockPanel.Dock="Left" Margin="1,1,5,1">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate>
+                                                <Image Width="16" Height="16" Source="{StaticResource RedXImage}" />
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <TextBox x:Name="FileCommonName" DockPanel.Dock="Right" MinWidth="175"
+                                 IsReadOnly="False"
+                                 Text="{Binding CommonName, UpdateSourceTrigger=Explicit}"
+                                 HorizontalAlignment="Stretch">
+                            <TextBox.Style>
+                                <Style TargetType="{x:Type TextBox}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsFocused" Value="True">
+                                            <Setter Property="BorderBrush"
+                                                    Value="{DynamicResource ActiveTextBoxBorder}" />
+                                            <Setter Property="Background"
+                                                    Value="{DynamicResource ActiveTextBoxBackground}" />
+                                            <Setter Property="Foreground"
+                                                    Value="{DynamicResource ActiveTextBoxForeground}" />
+                                        </Trigger>
+                                        <Trigger Property="IsFocused" Value="False">
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBox.Style>
+                        </TextBox>
+
+                    </DockPanel>
+                </DataTemplate>
+
+            </TabControl.Resources>
+
+            <TabItem x:Name="ParametersTab"
+                     Header="{x:Static client:Strings.ServiceParametersView_Parameters_Title}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MaxWidth="15" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition MaxWidth="100" />
+                        <ColumnDefinition Width="15" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition MaxWidth="100" />
+                        <ColumnDefinition MaxWidth="15" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition MaxWidth="100" />
+                        <ColumnDefinition MaxWidth="15" />
+                    </Grid.ColumnDefinitions>
+
+
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="Service Name:" />
+                    <TextBox Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="7"
+                             Text="{Binding DisplayName}"
+                             IsEnabled="False" />
+
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="Display Name:" />
+                    <TextBox Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="7"
+                             IsEnabled="{Binding ParametersUnlocked}"
+                             Text="{Binding CommonName}" />
+
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="Service Group:" />
+                    <ComboBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="7"
+                              IsEditable="True"
+                              IsEnabled="{Binding ParametersUnlocked}"
+                              ItemsSource="{Binding ServiceGroupBoxListItems}"
+                              SelectedItem="{Binding SelectedItem}"
+                              Text="{Binding NewItem, UpdateSourceTrigger=LostFocus}" />
+
+
+                    <TextBlock Grid.Row="3" Grid.Column="1" Text="Timeout:" />
+                    <TextBox Grid.Row="3" Grid.Column="2" HorizontalContentAlignment="Center"
+                             IsEnabled="{Binding ParametersUnlocked}"
+                             Text="{Binding Details.Timeout}" />
+
+                    <TextBlock Grid.Row="3" Grid.Column="4" Text="Start Order:" />
+                    <TextBox Grid.Row="3" Grid.Column="5" HorizontalContentAlignment="Center"
+                             Text="{Binding Details.StartOrder}" IsEnabled="{Binding ParametersUnlocked}" />
+
+                    <TextBlock Grid.Row="3" Grid.Column="7" Text="Stop Order:" />
+                    <TextBox Grid.Row="3" Grid.Column="8" HorizontalContentAlignment="Center"
+                             Text="{Binding Details.StopOrder}" IsEnabled="{Binding ParametersUnlocked}" />
+
+
+                    <CheckBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="7"
+                              HorizontalAlignment="Center"
+                              Content="Notify on Unexpected Stop"
+                              IsChecked="{Binding Details.NotifyOnUnexpectedStop}"
+                              Margin="5" />
+                </Grid>
+            </TabItem>
+            
+            <TabItem x:Name="ConfigFilesTab"
+                Header="{x:Static client:Strings.ServiceParametersView_ConfigFiles_Title}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <ListView x:Name="ConfigFileListView"
+                              DataContext="{Binding}"
+                              ItemsSource="{Binding ConfigFiles}"
+                              Tag="{x:Static client:Strings.CONST_CONFIG}"
+                              ctrl:ListViewLayoutManager.Enabled="True"
+                              IsEnabled="{Binding ParametersUnlocked}">
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <Separator Style="{StaticResource GroupSeparatorStyleKey}" Tag="{x:Static client:Strings.Header_FileOptions}" />
+
+                                <MenuItem Header="{x:Static client:Strings.ButtonText_AddFile}"
+                                          Command="{Binding AddFileCommand}"
+                                          CommandParameter="{x:Static client:Strings.CONST_CONFIG}"
+                                          >
+                                    <MenuItem.IsEnabled>
+                                        <MultiBinding Converter="{StaticResource HasValueConverter}" Mode="OneWay" ConverterParameter="False">
+                                            <Binding
+                                                RelativeSource="{RelativeSource AncestorType={x:Type ContextMenu}}"
+                                                Path=".PlacementTarget" />
+                                            <Binding Path="SelectedItem" />
+                                            <Binding Path="ParametersUnlocked" />
+                                        </MultiBinding>
+                                    </MenuItem.IsEnabled>
+                                </MenuItem>
+
+                                <MenuItem Header="{x:Static client:Strings.Verb_RemoveFile}"
+                                          Command="{Binding RemoveFileCommand}">
+                                    <MenuItem.IsEnabled>
+                                        <MultiBinding Converter="{StaticResource HasValueConverter}" ConverterParameter="True" Mode="OneWay">
+                                            <Binding RelativeSource="{RelativeSource AncestorType={x:Type ContextMenu}}"
+                                                Path=".PlacementTarget" />
+                                            <Binding Path="SelectedItem" />
+                                            <Binding Path="ParametersUnlocked" />
+                                        </MultiBinding>
+                                    </MenuItem.IsEnabled>
+                                    <MenuItem.CommandParameter>
+                                        <Binding RelativeSource="{RelativeSource AncestorType={x:Type ContextMenu}}" 
+                                                 Path="PlacementTarget.SelectedItem"
+                                                 Converter="{StaticResource LogFileParameterConverter}" Mode="OneWay"
+                                                 ConverterParameter="{x:Static client:Strings.CONST_CONFIG}" />
+                                    </MenuItem.CommandParameter>
+                                </MenuItem>
+                            
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                <Setter Property="HorizontalAlignment" Value="Stretch" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+
+                        <ListView.View>
+                            <GridView x:Name="ConfigFilesGridView">
+
+                                <GridViewColumn x:Name="CommonConfigNames" Width="200"
+                                                Header="{x:Static client:Strings.ServiceParametersView_CommonName}"
+                                                ctrl:ColumnVisibility.IsVisible="{Binding Source={StaticResource Settings}, 
+                                    Path=ShowServiceConfigFileName}"
+                                                CellTemplate="{StaticResource FileCommonNameTemplate}" />
+                                
+                                <GridViewColumn x:Name="ConfigFileNameColumn"
+                                                ctrl:RangeColumn.IsFillColumn="True"
+                                                ctrl:ColumnVisibility.IsVisible="{Binding Source={StaticResource Settings}, 
+                                    Path=ShowServiceConfigFilePath}">
+
+                                    <GridViewColumnHeader
+                                        Content="{x:Static client:Strings.ServiceParametersView_File}"
+                                        Tag="DisplayName" />
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate DataType="model:ExternalFile">
+                                            <TextBlock x:Name="FileNameTextBlock" ToolTip="{Binding FullPath}">
+                                                <TextBlock.Text>
+                                                    <MultiBinding
+                                                        Converter="{StaticResource PathShorteningMultiConverter}"
+                                                        ConverterParameter="200.0">
+                                                        <MultiBinding.Bindings>
+                                                            <Binding Path="FullPath" />
+                                                            <Binding ElementName="ConfigFileNameColumn"
+                                                                     Path="ActualWidth" />
+                                                            <Binding ElementName="FileNameTextBlock" Path="." />
+                                                        </MultiBinding.Bindings>
+                                                    </MultiBinding>
+                                                </TextBlock.Text>
+                                            </TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn Header="{x:Static client:Strings.Noun_FileSize}"
+                                                DisplayMemberBinding="{Binding Path=FileSize, Mode=OneWay}"
+                                                ctrl:ColumnVisibility.IsVisible="{Binding Source={StaticResource Settings}, 
+                                    Path=ShowServiceConfigFileSize}" />
+
+                                <GridViewColumn Header="{x:Static client:Strings.ServiceParametersView_LastModified}"
+                                                DisplayMemberBinding="{Binding Path=LastModified, Mode=OneWay}"
+                                                ctrl:ColumnVisibility.IsVisible="{Binding Source={StaticResource Settings}, 
+                                    Path=ShowServiceConfigFileDate}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+                   
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="LogFilesTab"
+                Header="{x:Static client:Strings.ServiceParametersView_LogFiles_Title}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <ListView x:Name="LogFileListView"
+                              IsEnabled="{Binding ParametersUnlocked}"
+                              ItemsSource="{Binding LogFiles}"
+                              Tag="{x:Static client:Strings.CONST_LOG}"
+                              ctrl:ListViewLayoutManager.Enabled="True">
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <Separator Style="{StaticResource GroupSeparatorStyleKey}" Tag="{x:Static client:Strings.Header_FileOptions}" />
+
+                                <MenuItem Header="{x:Static client:Strings.ButtonText_AddFile}"
+                                          Command="{Binding AddFileCommand}"
+                                          CommandParameter="{x:Static client:Strings.CONST_LOG}"
+                                          >
+                                    <MenuItem.IsEnabled>
+                                        <MultiBinding Converter="{StaticResource HasValueConverter}" Mode="OneWay" ConverterParameter="False">
+                                            <Binding
+                                                RelativeSource="{RelativeSource AncestorType={x:Type ContextMenu}}"
+                                                Path=".PlacementTarget" />
+                                            <Binding Path="SelectedItem" />
+                                            <Binding Path="ParametersUnlocked" />
+                                        </MultiBinding>
+                                    </MenuItem.IsEnabled>
+                                </MenuItem>
+
+                                <MenuItem Header="{x:Static client:Strings.Verb_RemoveFile}"
+                                          Command="{Binding RemoveFileCommand}">
+                                    <MenuItem.IsEnabled>
+                                        <MultiBinding Converter="{StaticResource HasValueConverter}" ConverterParameter="True" Mode="OneWay">
+                                            <Binding RelativeSource="{RelativeSource AncestorType={x:Type ContextMenu}}"
+                                                Path=".PlacementTarget" />
+                                            <Binding Path="SelectedItem" />
+                                            <Binding Path="ParametersUnlocked" />
+                                        </MultiBinding>
+                                    </MenuItem.IsEnabled>
+                                    <MenuItem.CommandParameter>
+                                        <Binding RelativeSource="{RelativeSource AncestorType={x:Type ContextMenu}}" 
+                                                 Path="PlacementTarget.SelectedItem"
+                                                 Converter="{StaticResource LogFileParameterConverter}" Mode="OneWay"
+                                                 ConverterParameter="{x:Static client:Strings.CONST_LOG}"
+                                                 />
+                                    </MenuItem.CommandParameter>
+                                </MenuItem>
+
+                                <!--<MenuItem Header="{x:Static client:Strings.Verb_UpdateLogFilePath}"
+                                          Command="{Binding ModifyFileCommand}" >
+                                    <MenuItem.IsEnabled>
+                                        <MultiBinding Converter="{StaticResource HasValueConverter}" ConverterParameter="True" Mode="OneWay">
+                                            <Binding
+                                                RelativeSource="{RelativeSource AncestorType={x:Type ContextMenu}}"
+                                                Path=".PlacementTarget" />
+                                            <Binding Path="SelectedItem" />
+                                            <Binding Path="ParametersUnlocked" />
+                                        </MultiBinding>
+                                    </MenuItem.IsEnabled>
+                                    <MenuItem.CommandParameter>
+                                        <Binding RelativeSource="{RelativeSource AncestorType={x:Type ContextMenu}}" 
+                                                 Path="PlacementTarget.SelectedItem"
+                                                 Converter="{StaticResource LogFileParameterConverter}" Mode="OneWay"
+                                                 ConverterParameter="{x:Static client:Strings.CONST_LOG}" />
+                                    </MenuItem.CommandParameter>
+                                </MenuItem>-->
+                                
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.View>
+                            <GridView x:Name="LogFilesGridView">
+                                
+                                <GridViewColumn x:Name="CommonLogNames"
+                                                Header="{x:Static client:Strings.ServiceParametersView_CommonName}"
+                                                ctrl:ColumnVisibility.IsVisible="{Binding Source={StaticResource Settings}, 
+                                    Path=ShowServiceConfigFileName}"
+                                                CellTemplate="{StaticResource FileCommonNameTemplate}" />
+
+                                <GridViewColumn x:Name="LogFileNameColumn"
+                                                ctrl:RangeColumn.IsFillColumn="True"
+                                                ctrl:ColumnVisibility.IsVisible="{Binding Source={StaticResource Settings}, 
+                                    Path=ShowServiceConfigFilePath}">
+                                    <GridViewColumnHeader
+                                        Content="{x:Static client:Strings.ServiceParametersView_File}"
+                                        Tag="DisplayName" />
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate DataType="model:ExternalFile">
+                                            <Border x:Name="FileNameBorder" BorderThickness="0">
+                                                <TextBlock x:Name="FileNameTextBlock" ToolTip="{Binding FullPath}">
+                                                    <TextBlock.Text>
+                                                        <MultiBinding
+                                                            Converter="{StaticResource PathShorteningMultiConverter}"
+                                                            ConverterParameter="200.0">
+                                                            <MultiBinding.Bindings>
+                                                                <Binding Path="FullPath" />
+                                                                <Binding ElementName="LogFileNameColumn"
+                                                                         Path="ActualWidth" />
+                                                                <Binding ElementName="FileNameTextBlock" Path="." />
+                                                            </MultiBinding.Bindings>
+                                                        </MultiBinding>
+                                                    </TextBlock.Text>
+                                                </TextBlock>
+                                            </Border>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn Header="{x:Static client:Strings.Noun_FileSize}"
+                                                DisplayMemberBinding="{Binding Path=FileSize, Mode=OneWay}"
+                                                ctrl:ColumnVisibility.IsVisible="{Binding Source={StaticResource Settings}, 
+                                    Path=ShowServiceConfigFileSize}" />
+
+                                <GridViewColumn Header="{x:Static client:Strings.ServiceParametersView_LastModified}"
+                                                DisplayMemberBinding="{Binding Path=LastModified, Mode=OneWay}"
+                                                ctrl:ColumnVisibility.IsVisible="{Binding Source={StaticResource Settings}, 
+                                    Path=ShowServiceConfigFileDate}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+
+        <!-- Dialog Control buttons -->
+        <StackPanel Grid.Row="11" Grid.Column="1"
+                    Grid.IsSharedSizeScope="True" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Button x:Name="AddFileButton"
+                            Grid.Column="0" Margin="5" Padding="15,0"
+                            Content="{x:Static client:Strings.ButtonText_AddFile}"
+                            Command="{Binding AddFileCommand}"
+                            IsEnabled="{Binding ParametersUnlocked}">
+                <Button.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=LogFilesTab, Path=IsSelected}" Value="True">
+                                <Setter Property="Button.CommandParameter" Value="{x:Static client:Strings.CONST_LOG}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=ConfigFilesTab, Path=IsSelected}" Value="True">
+                                <Setter Property="Button.CommandParameter" Value="{x:Static client:Strings.CONST_CONFIG}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=ParametersTab, Path=IsSelected}" Value="True">
+                                <Setter Property="Button.Visibility" Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="11"
+                    Grid.Column="3"
+                    Grid.IsSharedSizeScope="True" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Grid HorizontalAlignment="Left">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="A" />
+                </Grid.ColumnDefinitions>
+                <Grid.Children>
+                    <Button x:Name="CancelButton"
+                            Grid.Column="0" Margin="5" Padding="15,0"
+                            Content="{x:Static client:Strings.ButtonText_Cancel}"
+                            Command="{Binding RefreshSettingsCommand}"
+                            Click="OnButtonClick" />
+                </Grid.Children>
+            </Grid>
+            <Grid HorizontalAlignment="Right">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="A" />
+                </Grid.ColumnDefinitions>
+                <Grid.Children>
+                    <Button x:Name="OkButton" Grid.Column="0" Margin="5"
+                            Content="{x:Static client:Strings.ButtonText_OK}"
+                            IsDefault="True"
+                            Command="{Binding CommitCommand}"
+                            Click="OnOkClick" />
+                </Grid.Children>
+            </Grid>
+        </StackPanel>
+
+    </Grid>
+
+</Window>

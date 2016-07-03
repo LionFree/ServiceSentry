@@ -1,0 +1,98 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="MenuItemStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style x:Key="LEDBorder" TargetType="{x:Type Border}">
+        <Setter Property="Grid.Column" Value="3" />
+        <Setter Property="BorderThickness" Value="3" />
+        <Setter Property="Margin" Value="3" />
+        <Setter Property="Height" Value="10" />
+        <Setter Property="Width" Value="10" />
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="Background">
+            <Setter.Value>
+                <RadialGradientBrush >
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="Red" Offset="0.835"/>
+                </RadialGradientBrush>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <RadialGradientBrush>
+                    <GradientStop Color="Red" Offset="0.383"/>
+                    <GradientStop Color="#FFE4E4E4" Offset="1"/>
+                </RadialGradientBrush>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Status}" Value="Running">
+                <Setter Property="Border.Background">
+                    <Setter.Value>
+                        <RadialGradientBrush >
+                            <GradientStop Color="White"/>
+                            <GradientStop Color="Green" Offset="0.835"/>
+                        </RadialGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <RadialGradientBrush>
+                            <GradientStop Color="Green" Offset="0.383"/>
+                            <GradientStop Color="#FFE4E4E4" Offset="1"/>
+                        </RadialGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Needs to be a separate style, or it won't work -->
+    <Border x:Key="ImageCTX" x:Shared="false" Style="{StaticResource LEDBorder}" />
+
+    <Style x:Key="IndividualServiceStyleKey" TargetType="{x:Type MenuItem}" BasedOn="{StaticResource ContextMenuItemStyle}">
+        <Setter Property="Icon" Value="{StaticResource ImageCTX}" />
+    </Style>
+
+    <Style x:Key="ServiceGroupTogglingMenuItemStyleKey" TargetType="{x:Type MenuItem}" BasedOn="{StaticResource ContextMenuItemStyle}">
+        <Setter Property="IsEnabled" Value="{Binding EnableServiceButtons}" />
+    </Style>
+
+    <Style x:Key="ServiceTogglingMenuItemStyleKey" TargetType="{x:Type MenuItem}" BasedOn="{StaticResource ContextMenuItemStyle}">
+        <Setter Property="Visibility" Value="Collapsed" />
+        <Style.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=Header}" Value="Start Service" />
+                    <Condition Binding="{Binding Status}" Value="Stopped" />
+                    <Condition Binding="{Binding CanToggle}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Visibility" Value="Visible" />
+            </MultiDataTrigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=Header}" Value="Restart Service" />
+                    <Condition Binding="{Binding Status}" Value="Running" />
+                    <Condition Binding="{Binding CanToggle}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Visibility" Value="Visible" />
+            </MultiDataTrigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=Header}" Value="Stop Service" />
+                    <Condition Binding="{Binding Status}" Value="Running" />
+                    <Condition Binding="{Binding CanToggle}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Visibility" Value="Visible" />
+            </MultiDataTrigger>
+            
+            
+        </Style.Triggers>
+    </Style>
+    
+</ResourceDictionary>

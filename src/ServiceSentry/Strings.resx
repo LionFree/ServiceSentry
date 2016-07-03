@@ -1,0 +1,744 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutView_Application" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="AboutView_CompressionTechniques1" xml:space="preserve">
+    <value>Compression techniques from the</value>
+  </data>
+  <data name="AboutView_CompressionTechniques2" xml:space="preserve">
+    <value>project on CodePlex.</value>
+  </data>
+  <data name="AboutView_CopyrightWarning" xml:space="preserve">
+    <value>This computer program is protected by copyright law and international treaties.  Unauthorized reproduction or distribution of this program, or any portion of it, may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under the law.</value>
+  </data>
+  <data name="AboutView_Credits" xml:space="preserve">
+    <value>Credits:</value>
+  </data>
+  <data name="AboutView_IconsBy1" xml:space="preserve">
+    <value>Icons by</value>
+  </data>
+  <data name="AboutView_IconsBy2" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="AboutView_InstalledProducts" xml:space="preserve">
+    <value>Installed Products by Curtis Kaler:</value>
+  </data>
+  <data name="AboutView_LastBuild" xml:space="preserve">
+    <value>Last Build: </value>
+  </data>
+  <data name="AboutView_MEF1" xml:space="preserve">
+    <value>Managed Extensibility Framework from the </value>
+  </data>
+  <data name="AboutView_MEF2" xml:space="preserve">
+    <value>project on CodePlex.</value>
+  </data>
+  <data name="AboutView_NotifyIcon1" xml:space="preserve">
+    <value>Notification area icon from the </value>
+  </data>
+  <data name="AboutView_NotifyIcon2" xml:space="preserve">
+    <value>article on Code Project.</value>
+  </data>
+  <data name="AboutView_Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="AboutView_Warning" xml:space="preserve">
+    <value>Warning:</value>
+  </data>
+  <data name="ButtonText_AddFile" xml:space="preserve">
+    <value>Add File</value>
+  </data>
+  <data name="ButtonText_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ButtonText_Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="ButtonText_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ButtonText_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ButtonText_RemoveFile" xml:space="preserve">
+    <value>Remove File</value>
+  </data>
+  <data name="ButtonText_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ButtonText_ShowExceptions" xml:space="preserve">
+    <value>Show Exceptions</value>
+  </data>
+  <data name="GeneralOptionsView_AutoStart" xml:space="preserve">
+    <value>Auto-Start</value>
+  </data>
+  <data name="GeneralOptionsView_AutoStart_Checkbox" xml:space="preserve">
+    <value>Automatically start ServiceSentry when I log on to Windows</value>
+  </data>
+  <data name="GeneralOptionsView_AutoStart_Description" xml:space="preserve">
+    <value>ServiceSentry can start automatically and run in the background when you log on to Windows.</value>
+  </data>
+  <data name="GeneralOptionsView_LogArchiveLocation" xml:space="preserve">
+    <value>Log Archive Location</value>
+  </data>
+  <data name="GeneralOptionsView_LogArchiveLocation_Description" xml:space="preserve">
+    <value>Enter the folder where ServiceSentry should save any service log archives.</value>
+  </data>
+  <data name="GeneralOptionsView_MinimizeToTray" xml:space="preserve">
+    <value>Minimize to Tray</value>
+  </data>
+  <data name="GeneralOptionsView_MinimizeToTray_Checkbox" xml:space="preserve">
+    <value>Minimize to notification area when closing or minimizing.</value>
+  </data>
+  <data name="GeneralOptionsView_MinimizeToTray_Description" xml:space="preserve">
+    <value>Click the checkbox below in order to run ServiceSentry in the background when you close (or minimize) the main window.</value>
+  </data>
+  <data name="GeneralOptionsView_Title" xml:space="preserve">
+    <value>_General</value>
+  </data>
+  <data name="Header_DebugLogs" xml:space="preserve">
+    <value>ServiceSentry Debug Logs</value>
+  </data>
+  <data name="Header_DebugOptionsView" xml:space="preserve">
+    <value>Logging Options</value>
+  </data>
+  <data name="Header_ExceptionViewer" xml:space="preserve">
+    <value>ServiceSentry Exception Viewer</value>
+  </data>
+  <data name="Header_Folder" xml:space="preserve">
+    <value>Folder:</value>
+  </data>
+  <data name="Header_FormattingArguments" xml:space="preserve">
+    <value>Formatting Arguments:</value>
+  </data>
+  <data name="Header_LogFileNameFormat" xml:space="preserve">
+    <value>Filename Format:</value>
+  </data>
+  <data name="Header_LogLevels" xml:space="preserve">
+    <value>Levels to log:</value>
+  </data>
+  <data name="Header_MaxEmailsPerDay" xml:space="preserve">
+    <value>Maximum number of emails per day:</value>
+  </data>
+  <data name="Header_MaxEmailsPerMinute" xml:space="preserve">
+    <value>Maximum number of emails per minute:</value>
+  </data>
+  <data name="Header_Message" xml:space="preserve">
+    <value>Message:</value>
+  </data>
+  <data name="Header_MonitorServiceError" xml:space="preserve">
+    <value>The Monitor Service has encountered an error.</value>
+  </data>
+  <data name="Header_ServiceSentryDebugLog" xml:space="preserve">
+    <value>ServiceSentry Debug Log</value>
+  </data>
+  <data name="Header_StackTrace" xml:space="preserve">
+    <value>Stack Trace:</value>
+  </data>
+  <data name="LogView_CopyToClipboard" xml:space="preserve">
+    <value>Copy to clipboard</value>
+  </data>
+  <data name="LogView_DateTime_Header" xml:space="preserve">
+    <value>Date/Time</value>
+  </data>
+  <data name="LogView_Message_Header" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="LogView_ShowExceptionColumn" xml:space="preserve">
+    <value>Show Exception Column</value>
+  </data>
+  <data name="LogView_Type_Header" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="MainView_AboutButton_Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="MainView_LogButton_Text" xml:space="preserve">
+    <value>Session Log</value>
+    <comment>This is not the log FILE, but the log for the current SESSION of ServiceSentry</comment>
+  </data>
+  <data name="MainView_OptionsButton_Text" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="NotificationOptions_DeliveryMethod" xml:space="preserve">
+    <value>Delivery Method:</value>
+  </data>
+  <data name="NotificationOptions_EmailLimiter_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NotificationOptions_EmailNotifications" xml:space="preserve">
+    <value>Email Notifications</value>
+  </data>
+  <data name="NotificationOptions_EmailNotifications_Checkbox" xml:space="preserve">
+    <value>Automatically email an administrator when a service stops unexpectedly.</value>
+  </data>
+  <data name="NotificationOptions_EmailNotifications_Description" xml:space="preserve">
+    <value>ServiceSentry can automatically alert you by email when a service stops unexpectedly.</value>
+  </data>
+  <data name="NotificationOptions_EnableSSL" xml:space="preserve">
+    <value>Enable SSL:</value>
+  </data>
+  <data name="NotificationOptions_Header" xml:space="preserve">
+    <value>_Notifications</value>
+  </data>
+  <data name="NotificationOptions_HostName" xml:space="preserve">
+    <value>Host Name:</value>
+  </data>
+  <data name="NotificationOptions_Port" xml:space="preserve">
+    <value>Port:</value>
+  </data>
+  <data name="NotificationOptions_SendingEmailAddress" xml:space="preserve">
+    <value>Sending Email Address:</value>
+  </data>
+  <data name="NotificationOptions_SMTPInfo" xml:space="preserve">
+    <value>SMTP Host Information</value>
+  </data>
+  <data name="Noun_AllMessages" xml:space="preserve">
+    <value>All Messages</value>
+  </data>
+  <data name="Noun_AllServices" xml:space="preserve">
+    <value>All Services</value>
+    <comment>All Windows Services</comment>
+  </data>
+  <data name="Noun_CL_Options" xml:space="preserve">
+    <value>OPTIONS</value>
+  </data>
+  <data name="Noun_LogFileFilter" xml:space="preserve">
+    <value>Log Files (.log)|*.log|Text Files (.txt)|*.txt|All Files (*.*)|*.*</value>
+  </data>
+  <data name="Noun_FileSize" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="Noun_Icon" xml:space="preserve">
+    <value>Icon</value>
+  </data>
+  <data name="Noun_IconAndText" xml:space="preserve">
+    <value>Icon and Text</value>
+  </data>
+  <data name="Noun_Name" xml:space="preserve">
+    <value>NAME</value>
+  </data>
+  <data name="Noun_Service" xml:space="preserve">
+    <value>Service</value>
+    <comment>Windows Service</comment>
+  </data>
+  <data name="Noun_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="Noun_Usage" xml:space="preserve">
+    <value>USAGE</value>
+  </data>
+  <data name="OptionsView_Title" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="ServiceParametersView_CommonName" xml:space="preserve">
+    <value>Common Name</value>
+  </data>
+  <data name="ServiceParametersView_ConfigFiles_Title" xml:space="preserve">
+    <value>Config Files</value>
+  </data>
+  <data name="ServiceParametersView_File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="ServiceParametersView_LastModified" xml:space="preserve">
+    <value>Last Modified</value>
+  </data>
+  <data name="ServiceParametersView_LogFiles_Title" xml:space="preserve">
+    <value>Log Files</value>
+  </data>
+  <data name="ServiceParametersView_Parameters_Title" xml:space="preserve">
+    <value>Parameters</value>
+  </data>
+  <data name="ServiceParametersView_Title" xml:space="preserve">
+    <value>Modify Service Parameters</value>
+  </data>
+  <data name="ServicesView_ClearLogs_Text" xml:space="preserve">
+    <value>Clear Service Logs</value>
+  </data>
+  <data name="ServicesView_ClearLogs_Tooltip" xml:space="preserve">
+    <value>When the services are stopped, the log files will be deleted.</value>
+  </data>
+  <data name="ServicesView_Columns_LogFiles" xml:space="preserve">
+    <value>Log File(s)</value>
+  </data>
+  <data name="ServicesView_Columns_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="ServicesView_Columns_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ServicesView_ConfigFiles_Header" xml:space="preserve">
+    <value>Config File(s)</value>
+  </data>
+  <data name="ServicesView_ContextMenu_AddRemoveServices" xml:space="preserve">
+    <value>Add/Remove Services</value>
+  </data>
+  <data name="ServicesView_ContextMenu_ModifyServiceParameters" xml:space="preserve">
+    <value>Modify Service Parameters</value>
+  </data>
+  <data name="ServicesView_FileName_Header" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="ServicesView_FolderLink_Tooltip1" xml:space="preserve">
+    <value>Open the "</value>
+  </data>
+  <data name="ServicesView_FolderLink_Tooltip2" xml:space="preserve">
+    <value>" folder.</value>
+  </data>
+  <data name="ServicesView_IgnoreLogs_Text" xml:space="preserve">
+    <value>Ignore Service Logs</value>
+  </data>
+  <data name="ServicesView_IgnoreLogs_Tooltip" xml:space="preserve">
+    <value>Do nothing with the log files.</value>
+  </data>
+  <data name="ServicesView_Items_Header" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="ServicesView_LastModified_Header" xml:space="preserve">
+    <value>Last Modified</value>
+  </data>
+  <data name="ServicesView_LogArchiveLocation_Text" xml:space="preserve">
+    <value>Logs will be archived to: </value>
+  </data>
+  <data name="ServicesView_LogFileColumns_Header" xml:space="preserve">
+    <value>Log File Columns</value>
+  </data>
+  <data name="ServicesView_LogName_Header" xml:space="preserve">
+    <value>Log Name</value>
+  </data>
+  <data name="ServicesView_LogOptions_ArchiveServiceLogs" xml:space="preserve">
+    <value>Archive Service Logs</value>
+  </data>
+  <data name="ServicesView_LogOptions_ArchiveServiceLogs_Tooltip1" xml:space="preserve">
+    <value>When the services are stopped, the archives will be collected, zipped, and placed in the </value>
+  </data>
+  <data name="ServicesView_LogOptions_ArchiveServiceLogs_Tooltip2" xml:space="preserve">
+    <value> folder.</value>
+  </data>
+  <data name="ServicesView_LogOptions_Group_Header" xml:space="preserve">
+    <value>On service stop/restart:</value>
+  </data>
+  <data name="ServicesView_LogPath_Header" xml:space="preserve">
+    <value>Log Path</value>
+  </data>
+  <data name="ServicesView_OpenContainingFolder" xml:space="preserve">
+    <value>Open containing folder</value>
+  </data>
+  <data name="ServicesView_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="ServicesView_OtherFiles_Header" xml:space="preserve">
+    <value>Other Files</value>
+  </data>
+  <data name="ServicesView_Quote" xml:space="preserve">
+    <value>"</value>
+  </data>
+  <data name="ServicesView_RestartAllButton_Text" xml:space="preserve">
+    <value>Restart All</value>
+  </data>
+  <data name="ServicesView_RestartAllButton_Tooltip" xml:space="preserve">
+    <value>Stop all services (in the order specified), and then restart the services (in the order specified).</value>
+  </data>
+  <data name="ServicesView_RestartButton_Text" xml:space="preserve">
+    <value>Restart</value>
+  </data>
+  <data name="ServicesView_RestartGroup" xml:space="preserve">
+    <value>Restart Group</value>
+  </data>
+  <data name="ServicesView_RestartGroup_Description" xml:space="preserve">
+    <value>Restarts all the services in this service group.</value>
+  </data>
+  <data name="ServicesView_StartAllButton_Text" xml:space="preserve">
+    <value>Start All</value>
+  </data>
+  <data name="ServicesView_StartAllButton_Tooltip" xml:space="preserve">
+    <value>Start all services (in the order specified).</value>
+  </data>
+  <data name="ServicesView_StartButton_Text" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="ServicesView_StartGroup" xml:space="preserve">
+    <value>Start Group</value>
+  </data>
+  <data name="ServicesView_StartGroup_Description" xml:space="preserve">
+    <value>Starts all the services in this service group.</value>
+  </data>
+  <data name="ServicesView_Start_Description" xml:space="preserve">
+    <value>Start or restart the service.</value>
+  </data>
+  <data name="ServicesView_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ServicesView_StopAllButton_Text" xml:space="preserve">
+    <value>Stop All</value>
+  </data>
+  <data name="ServicesView_StopAllButton_Tooltip" xml:space="preserve">
+    <value>Stops all services (in the order specified).</value>
+  </data>
+  <data name="ServicesView_StopButton_Text" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="ServicesView_StopGroup" xml:space="preserve">
+    <value>Stop Group</value>
+  </data>
+  <data name="ServicesView_StopGroup_Description" xml:space="preserve">
+    <value>Stops all the services in this service group.</value>
+  </data>
+  <data name="ServicesView_Stop_Description" xml:space="preserve">
+    <value>Stop the service.</value>
+  </data>
+  <data name="Noun_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="ToggleView_DisplayName" xml:space="preserve">
+    <value>Display Name</value>
+  </data>
+  <data name="ToggleView_InstalledServices" xml:space="preserve">
+    <value>Installed Services:</value>
+  </data>
+  <data name="ToggleView_ServiceName" xml:space="preserve">
+    <value>Service Name</value>
+  </data>
+  <data name="ToggleView_Title" xml:space="preserve">
+    <value>Toggle Services</value>
+  </data>
+  <data name="Verb_AddConfigFiles" xml:space="preserve">
+    <value>Add Configuration Files</value>
+  </data>
+  <data name="Verb_AddLogFiles" xml:space="preserve">
+    <value>Add Log Files</value>
+  </data>
+  <data name="Verb_Clear" xml:space="preserve">
+    <value>Clear</value>
+    <comment>as in, Clear this window</comment>
+  </data>
+  <data name="Verb_Close" xml:space="preserve">
+    <value>Close</value>
+    <comment>as in, Close this window</comment>
+  </data>
+  <data name="Verb_CopyAllToClipboard" xml:space="preserve">
+    <value>_Copy all to clipboard</value>
+  </data>
+  <data name="Verb_Restart" xml:space="preserve">
+    <value>Restart</value>
+    <comment>as in, "Restart"this service</comment>
+  </data>
+  <data name="Verb_Save" xml:space="preserve">
+    <value>Save</value>
+    <comment>as in, Save this document</comment>
+  </data>
+  <data name="Verb_Start" xml:space="preserve">
+    <value>Start</value>
+    <comment>as in, "Start" this service</comment>
+  </data>
+  <data name="Verb_Stop" xml:space="preserve">
+    <value>Stop</value>
+    <comment>as in, "Stop" this service</comment>
+  </data>
+  <data name="Verb_WrapText" xml:space="preserve">
+    <value>_Wrap text</value>
+  </data>
+  <data name="CommandLineUsageView_Title" xml:space="preserve">
+    <value>Invalid Command-Line Arguments</value>
+  </data>
+  <data name="DebugOptionsView_LogFilePath_Description" xml:space="preserve">
+    <value>ServiceSentry and the Monitor service automatically saves their own debug logs.</value>
+  </data>
+  <data name="DebugOptionsView_LogFilePath_TextBox" xml:space="preserve">
+    <value>Enter the folder where ServiceSentry should save the debug log files.</value>
+  </data>
+  <data name="CommandLine_Debug_Details" xml:space="preserve">
+    <value>Enables debug mode.</value>
+  </data>
+  <data name="CommandLine_Minimized_Details" xml:space="preserve">
+    <value>Starts ServiceSentry minimized.</value>
+  </data>
+  <data name="CommandLine_Option" xml:space="preserve">
+    <value>[OPTIONS]</value>
+  </data>
+  <data name="CONST_CONFIG" xml:space="preserve">
+    <value>CONFIG</value>
+  </data>
+  <data name="CONST_LOG" xml:space="preserve">
+    <value>LOG</value>
+  </data>
+  <data name="Debug_CreatedServiceGroup" xml:space="preserve">
+    <value>Created service group '{0}' with {1} items.</value>
+    <comment>0 = service group name, 1 = # of items in the group</comment>
+  </data>
+  <data name="Debug_CreatingConfigFile" xml:space="preserve">
+    <value>Creating new configuration file.</value>
+  </data>
+  <data name="Debug_ImportingExtensions" xml:space="preserve">
+    <value>Importing extensions.</value>
+  </data>
+  <data name="Debug_MenuItemsPublishedToContextMenu" xml:space="preserve">
+    <value>Menu items published to context menu.</value>
+  </data>
+  <data name="Debug_NothingToPublish" xml:space="preserve">
+    <value>Nothing to publish.</value>
+  </data>
+  <data name="Debug_PublishingExtensionsToMainWindow" xml:space="preserve">
+    <value>Publishing extensions.</value>
+  </data>
+  <data name="Debug_PublishingExtensionsToOptions" xml:space="preserve">
+    <value>Publishing extensions to Options.</value>
+  </data>
+  <data name="Error_DirectoryDNE_1" xml:space="preserve">
+    <value>The directory "{0}" does not exist.{1}{2}</value>
+    <comment>0 = directory; 1 = line terminator; 2 = next line</comment>
+  </data>
+  <data name="Error_ErrorToLogMustBeAnException" xml:space="preserve">
+    <value>Error to log must be an Exception.</value>
+  </data>
+  <data name="Error_MonitorServiceError" xml:space="preserve">
+    <value>The Monitor Service has encountered{0} error{1}:</value>
+    <comment>0 = an, 1=s</comment>
+  </data>
+  <data name="Error_RestartPressedButServiceIsNull" xml:space="preserve">
+    <value>Restart button pressed, but Service parameter is null.</value>
+  </data>
+  <data name="Error_StartPressedButServiceIsNull" xml:space="preserve">
+    <value>Start button pressed, but Service parameter is null.</value>
+  </data>
+  <data name="Error_StopPressedButServiceIsNull" xml:space="preserve">
+    <value>Stop button pressed, but Service parameter is null.</value>
+  </data>
+  <data name="ExceptionViewer_SummaryMessage" xml:space="preserve">
+    <value>The following exception(s) occurred:</value>
+  </data>
+  <data name="Info_AddingService" xml:space="preserve">
+    <value>Adding service '{0}'.</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Info_RemovingService" xml:space="preserve">
+    <value>Removing service: '{0}'</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Warn_MonitorServiceNotAvailable" xml:space="preserve">
+    <value>ServiceSentry Monitor service is not available.</value>
+  </data>
+  <data name="_ApplicationDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="_ApplicationName" xml:space="preserve">
+    <value>ServiceSentry</value>
+  </data>
+  <data name="_ClientName" xml:space="preserve">
+    <value>ServiceSentry</value>
+  </data>
+  <data name="_CompanyName" xml:space="preserve">
+    <value>Curtis Kaler</value>
+  </data>
+  <data name="Noun_ConfigFileFilter" xml:space="preserve">
+    <value>Config Files (.config)|*.config|All Files (*.*)|*.*</value>
+  </data>
+  <data name="Header_FileOptions" xml:space="preserve">
+    <value>File Options</value>
+  </data>
+  <data name="Header_Services" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Verb_RemoveFile" xml:space="preserve">
+    <value>Remove File</value>
+  </data>
+  <data name="Verb_UpdateLogFilePath" xml:space="preserve">
+    <value>Update Log File Path</value>
+  </data>
+  <data name="Header_OtherLogs" xml:space="preserve">
+    <value>Other Logs</value>
+  </data>
+  <data name="Noun_AllFiles" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Noun_AllFilesFilter" xml:space="preserve">
+    <value>All Files (*.*)|*.*</value>
+  </data>
+  <data name="Verb_AddFile" xml:space="preserve">
+    <value>Add File</value>
+  </data>
+  <data name="Info_RemovingFile" xml:space="preserve">
+    <value>Removing ancillary file '{0}'.</value>
+    <comment>0 = file path</comment>
+  </data>
+  <data name="Info_WritingConfig" xml:space="preserve">
+    <value>Writing configuration file '{0}'.</value>
+    <comment>0 = config file path</comment>
+  </data>
+  <data name="Info_AddingFile" xml:space="preserve">
+    <value>Adding ancillary file '{0}'.</value>
+    <comment>0 = file path</comment>
+  </data>
+  <data name="Trace_PropertyChanged" xml:space="preserve">
+    <value>Property '{0}' changed on [{1}] {2}</value>
+    <comment>0 = property name, 1=type name, 2=object.tostring</comment>
+  </data>
+  <data name="Description_AddAFile" xml:space="preserve">
+    <value>Some files, e.g. the CCMExec logs or Tomcat Catalina logs, have filenames with timestamps like 
+"CcmExec-20131116-214758.log". To handle this (or other arbitrary sets of characters), ServiceSentry will accept the wildcard '*' to replace any number of characters in a filename.</value>
+  </data>
+  <data name="Header_AddAFile" xml:space="preserve">
+    <value>Add a File</value>
+  </data>
+  <data name="Header_FileName" xml:space="preserve">
+    <value>Filename:</value>
+  </data>
+  <data name="TextBox_AddAFile" xml:space="preserve">
+    <value>Select a file using the Browse button, then make any wildcard replacements.</value>
+  </data>
+  <data name="Verb_Browse" xml:space="preserve">
+    <value>Browse</value>
+    <comment>e.g., Browse for a file</comment>
+  </data>
+  <data name="Header_AdministratorEmail" xml:space="preserve">
+    <value>Administrator Email Address:</value>
+  </data>
+  <data name="Error_DirectoryDNE_2" xml:space="preserve">
+    <value>Would you like to create it?</value>
+  </data>
+  <data name="Title_WardenOptions" xml:space="preserve">
+    <value>Warden Server</value>
+  </data>
+  <data name="WardenOptions_Server_Description" xml:space="preserve">
+    <value>Windows services can be monitored from the web through a ServiceSentry Warden.</value>
+  </data>
+  <data name="WardenOptions_UpdateWarden_Checkbox" xml:space="preserve">
+    <value>Enable communication between this machine and a Warden server.</value>
+  </data>
+  <data name="Header_WebAddress" xml:space="preserve">
+    <value>Web Address:</value>
+  </data>
+  <data name="Text_None" xml:space="preserve">
+    <value>&lt;none&gt;</value>
+  </data>
+  <data name="ButtonText_OpenWarden" xml:space="preserve">
+    <value>Open ServiceSentry Warden in Browser</value>
+  </data>
+  <data name="ButtonText_TestWarden" xml:space="preserve">
+    <value>Test Warden Connection</value>
+  </data>
+  <data name="Validation_BadPortError" xml:space="preserve">
+    <value>Please enter a port number in the range: {0} - {1}.</value>
+    <comment>{0}=Port Minimum, {1}=Port Maximum</comment>
+  </data>
+  <data name="Validation_FAIL" xml:space="preserve">
+    <value>!</value>
+  </data>
+</root>

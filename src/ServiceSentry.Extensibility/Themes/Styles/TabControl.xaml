@@ -1,0 +1,84 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Colors.xaml" />
+        <ResourceDictionary Source="TabMargins.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style TargetType="{x:Type TabControl}">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabControl">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <!--
+                        The Border around each TabItem will allow us to draw the line
+                        between the TabPanel and the TabControl (resp. the
+                        TabPage-container) when a TabItem is NOT selected, which
+                        replaces the bottom line of the TabPanel's border.
+                        Thus, we'll avoid drawing the bottom line for the selected
+                        TabItem. Also, since the TabItem, when selected, applies a left
+                        Margin of 4px, we need to add these here as Padding.
+                     -->
+                        <Border Background="{StaticResource TabPanelBackgroundBrush}" 
+                                    Padding="{StaticResource TabPanelPadding}">
+
+                            <!-- This is the area in which TabItems (the strips) will be drawn. -->
+                            <TabPanel IsItemsHost="True"/>
+
+                        </Border>
+
+                        <!--
+                        This is the outer border of the TabControl itself, actually meaning
+                        the Panel that will host a TabItem's content.
+                        The top-border here will not be drawn as, otherwise, the TabPanel
+                        would always show a thin line for the selected Tab (which we want
+                        to avoid).
+                     -->
+                        <Border BorderThickness="1,0,1,1"
+                                    Grid.Row="1" 
+                                    BorderBrush="{StaticResource TabItemBorderBrushSelected}" 
+                                    Background="{StaticResource TabControlBackgroundBrushBase}">
+
+
+                            <!-- This is the first/outer Border drawn on the TabPage -->
+                            <Border BorderThickness="1"
+                                        Background="White"
+                                        BorderBrush="{StaticResource TabPageInnerBorderBrushDark}" 
+                                        CornerRadius="3"
+                                        Margin="8">
+
+                                <!--
+                              This is the second/inner Border drawn on the TabPage.
+                              This Border is drawn with a horizontal Gradient that is transparent
+                              on the left which produces the fading effect.
+                           -->
+                                <Border BorderThickness="1,0,1,1"
+                                   BorderBrush="{StaticResource TabPageInnerBorderBrushBright}" 
+                                   CornerRadius="2"
+                                   Margin="0"
+                                   Padding="2,2,3,3"
+                                   >
+                                    <!--
+                                 This is where the Content of the selected TabPage
+                                 will be rendered.
+                              -->
+                                    <ContentPresenter ContentSource="SelectedContent" Margin="0"/>
+                                </Border>
+                            </Border>
+                        </Border>
+
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

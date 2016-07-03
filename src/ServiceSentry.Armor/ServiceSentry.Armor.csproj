@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F2896144-9BF1-4229-9EF3-5061444DBA38}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ServiceSentry.Armor</RootNamespace>
+    <AssemblyName>ServiceSentry.Armor</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <CodeContractsAssemblyMode>0</CodeContractsAssemblyMode>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IntermediateOutputPath>C:\Users\CKR1\AppData\Local\Temp\vs7ECE.tmp\x64\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <IntermediateOutputPath>C:\Users\CKR1\AppData\Local\Temp\vs7ECE.tmp\x64\Release\</IntermediateOutputPath>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)Build\Unified.props" Condition="Exists('$(SolutionDir)Build\Unified.props')" />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE;CONTRACTS_FULL</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IntermediateOutputPath>C:\Users\CKR1\AppData\Local\Temp\vs7ECE.tmp\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DefineConstants>TRACE;NET3_5;WCF_SUPPORTED;CLIENT_SKU</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <IntermediateOutputPath>C:\Users\CKR1\AppData\Local\Temp\vs7ECE.tmp\Release\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Microsoft.WindowsAPICodePack\Core\Dialogs\Common\DialogControl.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Core\Dialogs\Common\DialogDefaults.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Core\Dialogs\Common\IDialogControlHost.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Core\Interop\CoreErrorHelper.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Core\Interop\CoreHelpers.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Core\Interop\CoreNativeMethods.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Core\Interop\Dialogs\DialogShowState.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Core\Interop\TaskDialogs\TaskDialogNativeMethods.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Core\Interop\WindowMessage.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Core\PropertySystem\PropertyKey.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Core\PropertySystem\PropVariant.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Core\PropertySystem\PropVariantNativeMethods.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Core\Resources\LocalizedMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalizedMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\CommonFileDialog.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\CommonFileDialogButton.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\CommonFileDialogCheckBox.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\CommonFileDialogComboBox.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\CommonFileDialogControl.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\CommonFileDialogControlCollection.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\CommonFileDialogFilter.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\CommonFileDialogFilterCollection.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\CommonFileDialogFolderChangeEventArgs.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\CommonFileDialogGroupBox.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\CommonFileDialogMenu.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\CommonFileDialogProminentControl.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\CommonFileDialogRadioButtonList.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\CommonFileDialogResult.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\CommonFileDialogTextBox.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\CommonFolderPicker.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\CommonOpenFileDialog.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\CommonSaveFileDialog.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\CommonFileDialogs\ICommonFileDialogIndexedControls.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\DefaultShellImageSizes.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\IconReference.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellEnums.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellException.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellFile.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellFileSystemFolder.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellFolder.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellFolderItems.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellHelper.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellLibrary.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellLink.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellNonFileSystemFolder.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellNonFileSystemItem.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellObject.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellObjectContainer.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellObjectFactory.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellSavedSearchCollection.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellSearchCollection.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellSearchConnector.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellThumbnail.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\ShellThumbnailEnums.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Common\SortColumn.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\ExplorerBrowser\CommonControlException.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Interop\Common\ShellCOMClasses.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Interop\Common\ShellCOMGuids.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Interop\Common\ShellCOMInterfaces.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Interop\Common\ShellNativeMethods.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Interop\Common\ShellNativeStructs.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Interop\Dialogs\DialogsCOMClasses.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Interop\Dialogs\DialogsCOMInterfaces.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Interop\KnownFolders\KnownFoldersCOMGuids.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Interop\KnownFolders\KnownFoldersCOMInterfaces.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Interop\KnownFolders\KnownFoldersNativeMethods.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Interop\PropertySystem\PropertySystemCOMInterfaces.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Interop\PropertySystem\PropertySystemNativeMethods.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Interop\TaskBar\TaskbarNativeMethods.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\KnownFolders\DefinitionOptions.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\KnownFolders\FileSystemKnownFolder.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\KnownFolders\FolderCategory.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\KnownFolders\FolderProperties.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\KnownFolders\FoldersIdentifiers.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\KnownFolders\FolderTypes.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\KnownFolders\IKnownFolder.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\KnownFolders\KnownFolderHelper.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\KnownFolders\KnownFolders.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\KnownFolders\KnownFolderSettings.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\KnownFolders\NonFileSystemKnownFolder.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\KnownFolders\RedirectionCapabilities.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\PropertySystem\IShellProperty.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\PropertySystem\PropertySystemException.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\PropertySystem\ShellProperties.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\PropertySystem\ShellProperty.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\PropertySystem\ShellPropertyCollection.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\PropertySystem\ShellPropertyDescription.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\PropertySystem\ShellPropertyDescriptionCache.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\PropertySystem\ShellPropertyEnums.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\PropertySystem\ShellPropertyEnumType.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\PropertySystem\ShellPropertyFactory.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\PropertySystem\ShellPropertyWriter.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\PropertySystem\StronglyTypedProperties.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\PropertySystem\SystemProperties.cs" />
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\Resources\LocalizedMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalizedMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Microsoft.WindowsAPICodePack\Shell\ShellObjectWatcher\ShellObjectWatcherEnums.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Strings.Designer.cs">
+      <DependentUpon>Strings.resx</DependentUpon>
+      <CustomToolNamespace>Microsoft.Internal</CustomToolNamespace>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="SingleInstance\NativeMethods.cs" />
+    <Compile Include="SingleInstance\SingleInstance.cs" />
+    <Compile Include="SingleInstance\WPFSingleInstance.cs" />
+    <Compile Include="WPF NotifyIcon\IsDesignMode.cs" />
+    <Compile Include="WPF NotifyIcon\InitializeNotificationAreaIcon.cs" />
+    <Compile Include="WPF NotifyIcon\Enums\BalloonIcon.cs" />
+    <Compile Include="WPF NotifyIcon\Enums\PopupActivationMode.cs" />
+    <Compile Include="WPF NotifyIcon\Interop\BalloonFlags.cs" />
+    <Compile Include="WPF NotifyIcon\Interop\IconDataMembers.cs" />
+    <Compile Include="WPF NotifyIcon\Interop\IconState.cs" />
+    <Compile Include="WPF NotifyIcon\Interop\MouseEvent.cs" />
+    <Compile Include="WPF NotifyIcon\Interop\NativeMethods.cs" />
+    <Compile Include="WPF NotifyIcon\Interop\NotifyCommand.cs" />
+    <Compile Include="WPF NotifyIcon\Interop\NotifyIconData.cs" />
+    <Compile Include="WPF NotifyIcon\Interop\NotifyIconVersion.cs" />
+    <Compile Include="WPF NotifyIcon\Interop\Point.cs" />
+    <Compile Include="WPF NotifyIcon\Interop\TrayInfo.cs" />
+    <Compile Include="WPF NotifyIcon\Interop\WindowClass.cs" />
+    <Compile Include="WPF NotifyIcon\Interop\WindowMessageSink.cs" />
+    <Compile Include="WPF NotifyIcon\NotificationUtilities.cs" />
+    <Compile Include="WPF NotifyIcon\RoutedEventHelper.cs" />
+    <Compile Include="WPF NotifyIcon\TaskbarIcon.cs" />
+    <Compile Include="WPF NotifyIcon\TaskbarIcon.Declarations.cs" />
+    <Compile Include="ZipReduced\BZip2\BitWriter.cs" />
+    <Compile Include="ZipReduced\BZip2\BZip2Compressor.cs" />
+    <Compile Include="ZipReduced\BZip2\BZip2InputStream.cs" />
+    <Compile Include="ZipReduced\BZip2\BZip2OutputStream.cs" />
+    <Compile Include="ZipReduced\BZip2\ParallelBZip2OutputStream.cs" />
+    <Compile Include="ZipReduced\BZip2\Rand.cs" />
+    <Compile Include="ZipReduced\CRC32.cs" />
+    <Compile Include="ZipReduced\Zip\ComHelper.cs" />
+    <Compile Include="ZipReduced\Zip\EncryptionAlgorithm.cs" />
+    <Compile Include="ZipReduced\Zip\Events.cs" />
+    <Compile Include="ZipReduced\Zip\Exceptions.cs" />
+    <Compile Include="ZipReduced\Zip\ExtractExistingFileAction.cs" />
+    <Compile Include="ZipReduced\Zip\FileSelector.cs" />
+    <Compile Include="ZipReduced\Zip\OffsetStream.cs" />
+    <Compile Include="ZipReduced\Zip\Shared.cs" />
+    <Compile Include="ZipReduced\Zip\ZipConstants.cs" />
+    <Compile Include="ZipReduced\Zip\ZipCrypto.cs" />
+    <Compile Include="ZipReduced\Zip\ZipDirEntry.cs" />
+    <Compile Include="ZipReduced\Zip\ZipEntry.cs" />
+    <Compile Include="ZipReduced\Zip\ZipEntry.Extract.cs" />
+    <Compile Include="ZipReduced\Zip\ZipEntry.Read.cs" />
+    <Compile Include="ZipReduced\Zip\ZipEntry.Write.cs" />
+    <Compile Include="ZipReduced\Zip\ZipEntrySource.cs" />
+    <Compile Include="ZipReduced\Zip\ZipErrorAction.cs" />
+    <Compile Include="ZipReduced\Zip\ZipFile.AddUpdate.cs" />
+    <Compile Include="ZipReduced\Zip\ZipFile.Check.cs" />
+    <Compile Include="ZipReduced\Zip\ZipFile.cs" />
+    <Compile Include="ZipReduced\Zip\ZipFile.Events.cs" />
+    <Compile Include="ZipReduced\Zip\ZipFile.Extract.cs" />
+    <Compile Include="ZipReduced\Zip\ZipFile.Read.cs" />
+    <Compile Include="ZipReduced\Zip\ZipFile.Save.cs" />
+    <Compile Include="ZipReduced\Zip\ZipFile.SaveSelfExtractor.cs" />
+    <Compile Include="ZipReduced\Zip\ZipFile.Selector.cs" />
+    <Compile Include="ZipReduced\Zip\ZipFile.x-IEnumerable.cs" />
+    <Compile Include="ZipReduced\Zip\ZipInputStream.cs" />
+    <Compile Include="ZipReduced\Zip\ZipOutputStream.cs" />
+    <Compile Include="ZipReduced\Zip\ZipSegmentedStream.cs" />
+    <Compile Include="ZipReduced\Zlib\Deflate.cs" />
+    <Compile Include="ZipReduced\Zlib\DeflateStream.cs" />
+    <Compile Include="ZipReduced\Zlib\GZipStream.cs" />
+    <Compile Include="ZipReduced\Zlib\Inflate.cs" />
+    <Compile Include="ZipReduced\Zlib\InfTree.cs" />
+    <Compile Include="ZipReduced\Zlib\ParallelDeflateOutputStream.cs" />
+    <Compile Include="ZipReduced\Zlib\Tree.cs" />
+    <Compile Include="ZipReduced\Zlib\Zlib.cs" />
+    <Compile Include="ZipReduced\Zlib\ZlibBaseStream.cs" />
+    <Compile Include="ZipReduced\Zlib\ZlibCodec.cs" />
+    <Compile Include="ZipReduced\Zlib\ZlibConstants.cs" />
+    <Compile Include="ZipReduced\Zlib\ZlibStream.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Microsoft.WindowsAPICodePack\Core\Resources\LocalizedMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalizedMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Microsoft.WindowsAPICodePack\Shell\Resources\LocalizedMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalizedMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Microsoft.Internal</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>echo f | xcopy /Y /f "$(TargetPath)" "$(SolutionDir)build\$(ConfigurationName)" &gt;nul</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

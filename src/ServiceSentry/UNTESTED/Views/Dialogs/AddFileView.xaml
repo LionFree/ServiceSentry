@@ -1,0 +1,62 @@
+﻿<Window x:Class="ServiceSentry.Client.UNTESTED.Views.Dialogs.AddFileView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:client="clr-namespace:ServiceSentry.Client"
+        Title="AddLogByWildcardView"  >
+    <!--SizeToContent="Height"-->
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Styles/Colors.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.Background>
+        <StaticResource ResourceKey="WindowBackgroundColor" />
+    </Window.Background>
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition MaxHeight="25" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="5" Style="{DynamicResource TitleLabel}"
+                               TextWrapping="Wrap" VerticalAlignment="Bottom"
+                               Text="{x:Static client:Strings.Header_AddAFile}" />
+
+        <TextBlock Grid.Row="2" Margin="5" Style="{DynamicResource DefaultLabel}" TextWrapping="Wrap"
+                               Height="Auto" VerticalAlignment="Top"
+                               Text="{x:Static client:Strings.Description_AddAFile}" />
+
+        <TextBlock Grid.Row="3" Margin="5" Style="{DynamicResource DefaultLabel}" TextWrapping="Wrap"
+                               Height="Auto" VerticalAlignment="Top"
+                               Text="{x:Static client:Strings.TextBox_AddAFile}" />
+
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Margin="5" Style="{DynamicResource DefaultLabel}"
+                               Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Right"
+                               Text="{x:Static client:Strings.Header_FileName}" />
+
+            <TextBox
+                            x:Name="LogFileLocation" Grid.Column="1" 
+                            Margin="5" BorderBrush="DarkGray" BorderThickness="1"
+                            DockPanel.Dock="Left"
+                            Text="{Binding Filename, Mode=TwoWay}" />
+
+            <Button Grid.Column="2" 
+                            Content="{x:Static client:Strings.Verb_Browse}" DockPanel.Dock="Right" Margin="5" MinWidth="100"
+                                Command="{Binding GetFilenameCommand}" />
+
+        </Grid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,109 @@
+﻿<Window x:Class="ServiceSentry.Client.UNTESTED.Views.Controls.GeneralOptionsTabHarness"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:client="clr-namespace:ServiceSentry.Client"
+        
+        SizeToContent="Height">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Styles/TabStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Window.Background>
+        <StaticResource ResourceKey="WindowBackgroundColor" />
+    </Window.Background>
+    <Grid>
+        <TabControl x:Name="RootTabs">
+            <TabItem x:Name="GeneralOptionsTab" Header="{x:Static client:Strings.GeneralOptionsView_Title}"
+                     Style="{StaticResource TabItemStyle}">
+                <TabItem.Resources>
+                    <SolidColorBrush x:Key="SeparatorStroke" Color="DarkGray" />
+                </TabItem.Resources>
+
+                <Grid x:Name="LayoutRoot">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition MaxHeight="25" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="1"
+                               HorizontalAlignment="Left" Margin="5" Style="{DynamicResource TitleLabel}"
+                               VerticalAlignment="Top" TextWrapping="Wrap" Text="{x:Static client:Strings.GeneralOptionsView_AutoStart}" />
+                    
+                    <TextBlock Grid.Row="2" Margin="5" Style="{DynamicResource DefaultLabel}" TextWrapping="Wrap"
+                               Height="Auto" VerticalAlignment="Top"
+                               Text="{x:Static client:Strings.GeneralOptionsView_AutoStart_Description}" />
+
+                    <CheckBox Grid.Row="3"
+                              Margin="5" VerticalAlignment="Top" x:Name="ShouldAutoStart"
+                              IsChecked="{Binding IsAutoStart, Mode=TwoWay}">
+                        <TextBlock Style="{DynamicResource DefaultLabel}"
+                                   TextWrapping="Wrap"
+                                   Text="{x:Static client:Strings.GeneralOptionsView_AutoStart_Checkbox}" />
+                    </CheckBox>
+
+
+                    <Border Grid.Row="4" Margin="5 10" BorderThickness="1"
+                            BorderBrush="{DynamicResource SeparatorStroke}" />
+
+                    <TextBlock Grid.Row="5" HorizontalAlignment="Left" Margin="5" Style="{DynamicResource TitleLabel}"
+                               TextWrapping="Wrap" VerticalAlignment="Bottom"
+                               Text="{x:Static client:Strings.GeneralOptionsView_MinimizeToTray}" />
+
+                    <TextBlock Grid.Row="6" Margin="5" Style="{DynamicResource DefaultLabel}"
+                               Height="Auto" TextWrapping="Wrap" VerticalAlignment="Top"
+                               Text="{x:Static client:Strings.GeneralOptionsView_MinimizeToTray_Description}" />
+
+                    <CheckBox Grid.Row="7"
+                              Margin="5"
+                              VerticalAlignment="Top"
+                              x:Name="MinimizeToTray"
+                              IsChecked="{Binding CloseToTray, Mode=TwoWay}">
+                        <TextBlock Style="{DynamicResource DefaultLabel}"
+                                   TextWrapping="Wrap"
+                                   Text="{x:Static client:Strings.GeneralOptionsView_MinimizeToTray_Checkbox}" />
+                    </CheckBox>
+
+                    <Border Grid.Row="8" Margin="5 10" BorderThickness="1"
+                            BorderBrush="{DynamicResource SeparatorStroke}" />
+                    <TextBlock Grid.Row="9" HorizontalAlignment="Left" Margin="5" Style="{DynamicResource TitleLabel}"
+                               TextWrapping="Wrap" VerticalAlignment="Bottom"
+                               Text="{x:Static client:Strings.GeneralOptionsView_LogArchiveLocation}" />
+                    <TextBlock Grid.Row="10" Margin="5" Style="{DynamicResource DefaultLabel}"
+                               Height="Auto" TextWrapping="Wrap" VerticalAlignment="Top"
+                               Text="{x:Static client:Strings.GeneralOptionsView_LogArchiveLocation_Description}" />
+                    <DockPanel Grid.Row="11" LastChildFill="True">
+                        <Button Content="Browse" DockPanel.Dock="Right" Margin="5" MinWidth="100"
+                                Command="{Binding OpenFolderChooserCommand}" />
+                        <TextBox
+                            x:Name="LogArchiveLocation"
+                            Margin="5" BorderBrush="DarkGray" BorderThickness="1"
+                            DockPanel.Dock="Left"
+                            Text="{Binding LogArchiveFolder, Mode=TwoWay}" />
+                    </DockPanel>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

@@ -1,0 +1,27 @@
+﻿<Application x:Class="ServiceSentry.Client.Infrastructure.Engine"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Startup="OnStartup"
+             ShutdownMode="OnExplicitShutdown">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Images/ApplicationIcons.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Images/LoggerIcons.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Images/ServiceTogglingIcons.xaml" />
+                
+                <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Styles/CommonControlStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Styles/TabStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Generic.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/ServiceSentry;component/Views/Styles/TrayIconStyles.xaml" />
+                
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="MenuItem">
+                <Setter Property="HorizontalContentAlignment" Value="Left" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

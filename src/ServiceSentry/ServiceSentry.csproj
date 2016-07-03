@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <CultureInfo>en-US</CultureInfo>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{233134E0-1B77-4445-9B88-4ED174C1420D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ServiceSentry.Client</RootNamespace>
+    <AssemblyName>ServiceSentry</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IntermediateOutputPath>C:\Users\CKR1\AppData\Local\Temp\vsA7EA.tmp\x64\Debug\</IntermediateOutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <IntermediateOutputPath>C:\Users\CKR1\AppData\Local\Temp\vsA7EA.tmp\x64\Release\</IntermediateOutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)Build\Unified.props" Condition="Exists('$(SolutionDir)Build\Unified.props')" />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DefineConstants>DEBUG;TRACE;CONTRACTS_FULL</DefineConstants>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <IntermediateOutputPath>C:\Users\CKR1\AppData\Local\Temp\vsA7EA.tmp\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DefineConstants>TRACE</DefineConstants>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <IntermediateOutputPath>C:\Users\CKR1\AppData\Local\Temp\vsA7EA.tmp\Release\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Views\Resources\Images\ApplicationIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>014EAA48A68EBB08F557192E13B1E796B9B9E142</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ServiceUtil_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="JetBrains.Annotations, Version=10.1.5.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.10.1.5\lib\net\JetBrains.Annotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="UNTESTED\Framework\Notification\NotificationArea.cs" />
+    <Compile Include="UNTESTED\Framework\Notification\NotificationIcon.cs" />
+    <Compile Include="Infrastructure\Engine.xaml.cs">
+      <DependentUpon>Engine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\ApplicationEntryPoint.cs" />
+    <Compile Include="UNTESTED\Infrastructure\ClientClassFactory.cs" />
+    <Compile Include="Infrastructure\ExceptionHandler.cs" />
+    <Compile Include="Properties\InternalsVisibleTo.cs" />
+    <Compile Include="UNTESTED\Infrastructure\CommandLocator.cs" />
+    <Compile Include="UNTESTED\Infrastructure\CommandLineProcessor.cs" />
+    <Compile Include="UNTESTED\Model\ApplicationState.cs" />
+    <Compile Include="UNTESTED\Model\ServiceGroup.cs" />
+    <Compile Include="UNTESTED\Model\MonitorErrorHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="UNTESTED\Model\ViewController.cs" />
+    <Compile Include="UNTESTED\Infrastructure\ViewModelLocator.cs" />
+    <Compile Include="UNTESTED\ViewModels\AddFileViewModel.cs" />
+    <Compile Include="UNTESTED\ViewModels\AddServicesViewModel.cs" />
+    <Compile Include="UNTESTED\ViewModels\CommandLineUsageViewModel.cs" />
+    <Compile Include="UNTESTED\ViewModels\Commands\FileCommands.cs" />
+    <Compile Include="UNTESTED\ViewModels\Commands\ShellCommands.cs" />
+    <Compile Include="UNTESTED\ViewModels\Commands\ServiceTogglingCommands.cs" />
+    <Compile Include="UNTESTED\ViewModels\DebugOptionsViewModel.cs" />
+    <Compile Include="UNTESTED\ViewModels\ExceptionViewerViewModel.cs" />
+    <Compile Include="UNTESTED\ViewModels\WardenOptionsViewModel.cs" />
+    <Compile Include="UNTESTED\ViewModels\LogViewModel.cs" />
+    <Compile Include="UNTESTED\ViewModels\TrayIconViewModel.cs" />
+    <Compile Include="UNTESTED\ViewModels\NotificationOptionsViewModel.cs" />
+    <Compile Include="UNTESTED\ViewModels\GeneralOptionsViewModel.cs" />
+    <Compile Include="UNTESTED\Views\Controls\WardenServerTabHarness.xaml.cs">
+      <DependentUpon>WardenServerTabHarness.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UNTESTED\Views\Dialogs\AddFileView.xaml.cs">
+      <DependentUpon>AddFileView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UNTESTED\Views\Dialogs\CommandLineUsageView.xaml.cs">
+      <DependentUpon>CommandLineUsageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UNTESTED\Views\Controls\DebugOptionsTabHarness.xaml.cs">
+      <DependentUpon>DebugOptionsTabHarness.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UNTESTED\Views\Converters\BooleanToWidthConverter.cs" />
+    <Compile Include="UNTESTED\Views\Converters\ColumnWidthConverter.cs" />
+    <Compile Include="UNTESTED\Views\Converters\LogFileParameterConverter.cs" />
+    <Compile Include="UNTESTED\Views\Converters\HasValueConverter.cs" />
+    <Compile Include="UNTESTED\Views\Converters\LogLevelWidthConverter.cs" />
+    <Compile Include="UNTESTED\Views\Converters\ComboBoxWidthConverter.cs" />
+    <Compile Include="UNTESTED\Views\Converters\MessageHasExceptionMetadataConverter.cs" />
+    <Compile Include="UNTESTED\Views\Converters\MinimumLevelToBooleanConverter.cs" />
+    <Compile Include="UNTESTED\Views\Converters\PathShorteningConverter.cs" />
+    <Compile Include="UNTESTED\Views\Converters\ServiceParameterConverter.cs" />
+    <Compile Include="UNTESTED\Views\Converters\TypeToSmallImageConverter.cs" />
+    <Compile Include="UNTESTED\Views\Dialogs\ExceptionViewer.xaml.cs">
+      <DependentUpon>ExceptionViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UNTESTED\ViewModels\OptionsViewModel.cs" />
+    <Compile Include="UNTESTED\ViewModels\ServiceParametersViewModel.cs" />
+    <Compile Include="UNTESTED\Views\Dialogs\AddServicesView.xaml.cs">
+      <DependentUpon>AddServicesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UNTESTED\Views\Converters\ValueIsServiceConverter.cs" />
+    <Compile Include="UNTESTED\Views\Helpers\ExceptionViewerHelper.cs" />
+    <Compile Include="UNTESTED\Views\Dialogs\LogView.xaml.cs">
+      <DependentUpon>LogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UNTESTED\Views\Controls\NotificationOptionsTabHarness.xaml.cs">
+      <DependentUpon>NotificationOptionsTabHarness.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UNTESTED\Views\Controls\GeneralOptionsTabHarness.xaml.cs">
+      <DependentUpon>GeneralOptionsTabHarness.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UNTESTED\ViewModels\AboutViewModel.cs" />
+    <Compile Include="UNTESTED\ViewModels\ServicesViewModel.cs" />
+    <Compile Include="UNTESTED\ViewModels\ShellWindowViewModel.cs" />
+    <Compile Include="UNTESTED\Infrastructure\ViewLocator.cs" />
+    <Compile Include="UNTESTED\Views\TrayIconView.xaml.cs">
+      <DependentUpon>TrayIconView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Resources\ResourceKeys.cs" />
+    <Page Include="Infrastructure\Engine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UNTESTED\Views\Controls\WardenServerTabHarness.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UNTESTED\Views\Dialogs\AddFileView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UNTESTED\Views\Dialogs\AddServicesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UNTESTED\Views\Dialogs\CommandLineUsageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UNTESTED\Views\Controls\DebugOptionsTabHarness.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UNTESTED\Views\Dialogs\ExceptionViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UNTESTED\Views\Dialogs\LogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UNTESTED\Views\Controls\NotificationOptionsTabHarness.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UNTESTED\Views\Controls\GeneralOptionsTabHarness.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UNTESTED\Views\Notification\BalloonPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UNTESTED\Views\TrayIconView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UNTESTED\Views\Notification\InfoPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UNTESTED\Views\Notification\NotificationAreaPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UNTESTED\Views\Notification\NotificationAreaToolTip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Resources\Icons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UNTESTED\Views\Dialogs\ServiceParametersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UNTESTED\Views\Controls\ServicesTabHarness.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UNTESTED\Views\Dialogs\AboutView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UNTESTED\Views\Dialogs\OptionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UNTESTED\Views\ShellWindowView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="UNTESTED\Infrastructure\AutoStart.cs" />
+    <Compile Include="UNTESTED\Model\ServiceHandler.cs" />
+    <Compile Include="UNTESTED\Infrastructure\ExtensionHandler.cs" />
+    <Compile Include="UNTESTED\Views\Helpers\UIHelperExtensions.cs" />
+    <Compile Include="UNTESTED\Views\Notification\BalloonPopup.xaml.cs">
+      <DependentUpon>BalloonPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UNTESTED\Views\Notification\InfoPopup.xaml.cs">
+      <DependentUpon>InfoPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UNTESTED\Views\Notification\NotificationAreaPopup.xaml.cs">
+      <DependentUpon>NotificationAreaPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UNTESTED\Views\Notification\NotificationAreaToolTip.xaml.cs">
+      <DependentUpon>NotificationAreaToolTip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UNTESTED\Views\Dialogs\AboutView.xaml.cs">
+      <DependentUpon>AboutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UNTESTED\Views\Dialogs\OptionsView.xaml.cs">
+      <DependentUpon>OptionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UNTESTED\Views\Dialogs\ServiceParametersView.xaml.cs">
+      <DependentUpon>ServiceParametersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UNTESTED\Views\Controls\ServicesTabHarness.xaml.cs">
+      <DependentUpon>ServicesTabHarness.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UNTESTED\Views\ShellWindowView.xaml.cs">
+      <DependentUpon>ShellWindowView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\Styles\ServiceToggleStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Styles\LogItemStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Styles\TrayIconStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceSentry.Armor\ServiceSentry.Armor.csproj">
+      <Project>{f2896144-9bf1-4229-9ef3-5061444dba38}</Project>
+      <Name>ServiceSentry.Armor</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceSentry.Common\ServiceSentry.Common.csproj">
+      <Project>{5D6024EB-20FC-4C28-B7F5-D96EB952C61E}</Project>
+      <Name>ServiceSentry.Common</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceSentry.Extensibility\ServiceSentry.Extensibility.csproj">
+      <Project>{C60A796A-FE67-4196-A0DB-14A23FA91862}</Project>
+      <Name>ServiceSentry.Extensibility</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceSentry.Model\ServiceSentry.Model.csproj">
+      <Project>{0956e6ff-53d2-4331-bd3b-7637206d2142}</Project>
+      <Name>ServiceSentry.Model</Name>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\Images\ApplicationIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\Images\ApplicationIconWarn.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\Images\Medium\LightBulb.png" />
+    <Resource Include="Views\Resources\Images\Small\Locked.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>echo f | xcopy /Y /f "$(TargetPath)" "$(SolutionDir)build\$(ConfigurationName)" &gt;nul
+</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>rem echo f | xcopy /Y /f "$(SolutionDir)..\Included Files\*.xml" "$(TargetDir)*.xml" &gt;nul
+</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

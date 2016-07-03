@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C60A796A-FE67-4196-A0DB-14A23FA91862}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ServiceSentry.Extensibility</RootNamespace>
+    <AssemblyName>ServiceSentry.Extensibility</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <CodeContractsAssemblyMode>0</CodeContractsAssemblyMode>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE</DefineConstants>
+    <IntermediateOutputPath>C:\Users\CURTIS~1.KAL\AppData\Local\Temp\vs5E98.tmp\x64\Release\</IntermediateOutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IntermediateOutputPath>C:\Users\CURTIS~1.KAL\AppData\Local\Temp\vs5E98.tmp\x64\Debug\</IntermediateOutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)Build\Unified.props" Condition="Exists('$(SolutionDir)Build\Unified.props')" />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IntermediateOutputPath>C:\Users\CURTIS~1.KAL\AppData\Local\Temp\vs5E98.tmp\Debug\</IntermediateOutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <DebugSymbols>true</DebugSymbols>
+    <IntermediateOutputPath>C:\Users\CURTIS~1.KAL\AppData\Local\Temp\vs5E98.tmp\Release\</IntermediateOutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\CheckComboBox\CheckComboBox.cs" />
+    <Compile Include="Controls\GridViewColumns\ConverterGridViewColumn.cs" />
+    <Compile Include="Controls\Dialogs.cs" />
+    <Compile Include="Controls\GridViewColumns\FixedColumn.cs" />
+    <Compile Include="Controls\Converters\InverseBoolConverter.cs" />
+    <Compile Include="Controls\GridViewColumns\ImageGridViewColumn.cs" />
+    <Compile Include="Controls\GridViewColumns\Visibility.cs" />
+    <Compile Include="Controls\SortingGridView\ISortingGridView.cs" />
+    <Compile Include="Controls\CheckComboBox\KeyboardUtilities.cs" />
+    <Compile Include="Controls\GridViewColumns\LayoutColumn.cs" />
+    <Compile Include="Controls\GridViewColumns\ListViewLayoutManager.cs" />
+    <Compile Include="Controls\GridViewColumns\ProportionalColumn.cs" />
+    <Compile Include="Controls\GridViewColumns\RangeColumn.cs" />
+    <Compile Include="Controls\Commands\RelayCommand%271.cs" />
+    <Compile Include="Controls\Commands\RelayCommand%272.cs" />
+    <Compile Include="Controls\Commands\RelayCommandBase.cs" />
+    <Compile Include="Controls\CheckComboBox\SelectorItem.cs" />
+    <Compile Include="Controls\SortingGridView\SortingGridViewTabItem.cs" />
+    <Compile Include="Controls\SortingGridView\SortingGridViewWindow.cs" />
+    <Compile Include="Controls\CheckComboBox\ValueChangeHelper.cs" />
+    <Compile Include="Controls\WPFUtilities.cs" />
+    <Compile Include="FileSystem\AssemblyInspector.cs" />
+    <Compile Include="FileSystem\AssemblyWrapper.cs" />
+    <Compile Include="BaseClasses\DisposableBase.cs" />
+    <Compile Include="BaseClasses\DisposableEquatableBase.cs" />
+    <Compile Include="BaseClasses\EquatableBase.cs" />
+    <Compile Include="FileSystem\Implementations\FileSystemImplementation.cs" />
+    <Compile Include="FileSystem\Implementations\LoggedFileSystemImplementation.cs" />
+    <Compile Include="FileSystem\RegistryBehavior.cs" />
+    <Compile Include="Logging\LoggingUtilities.cs" />
+    <Compile Include="Logging\LogLevel.cs" />
+    <Compile Include="Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="FileSystem\DirectoryInfoWrapper.cs" />
+    <Compile Include="FileSystem\FileInfoWrapper.cs" />
+    <Compile Include="FileSystem\FileSystem.cs" />
+    <Compile Include="FileSystem\PathShortener.cs" />
+    <Compile Include="FileSystem\WindowsRegistry.cs" />
+    <Compile Include="FileSystem\Zipper.cs" />
+    <Compile Include="Logging\EnabledLevels.cs" />
+    <Compile Include="Logging\Exceptions\ExceptionWriter.cs" />
+    <Compile Include="Logging\Exceptions\LineAdder.cs" />
+    <Compile Include="Logging\FileNameFormatter.cs" />
+    <Compile Include="Logging\FileNameFormattingOption.cs" />
+    <Compile Include="Logging\Log.cs" />
+    <Compile Include="Logging\LogConfiguration.cs" />
+    <Compile Include="Logging\LogEntry.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Plugin Infrastructure\Extensions\ImportedExtension.cs" />
+    <Compile Include="BaseClasses\ItemsCollectionT.cs" />
+    <Compile Include="BaseClasses\PropertyChangedBase.cs" />
+    <Compile Include="BaseClasses\ThreadSafeObservableCollection.cs" />
+    <Compile Include="Plugin Infrastructure\Extensions\ContextMenuExtension.cs" />
+    <Compile Include="Plugin Infrastructure\Extensions\OptionsTabExtension.cs" />
+    <Compile Include="Plugin Infrastructure\Extensions\TabExtension.cs" />
+    <Compile Include="Plugin Infrastructure\Extensions\TimerExtension.cs" />
+    <Compile Include="Plugin Infrastructure\Imports\ImportedContextMenu.cs" />
+    <Compile Include="Plugin Infrastructure\Imports\ImportedOptionsTabItem.cs" />
+    <Compile Include="Plugin Infrastructure\Imports\ImportedTabItem.cs" />
+    <Compile Include="Plugin Infrastructure\Imports\ImportedTimerItem.cs" />
+    <Compile Include="Plugin Infrastructure\Interfaces\IContextMenuExtension.cs" />
+    <Compile Include="Plugin Infrastructure\Interfaces\IExtensionClass.cs" />
+    <Compile Include="Plugin Infrastructure\Interfaces\IOptionsTabExtension.cs" />
+    <Compile Include="Plugin Infrastructure\Interfaces\ITabExtension.cs" />
+    <Compile Include="Plugin Infrastructure\Interfaces\ITimerExtension.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\InternalsVisibleTo.cs" />
+    <Compile Include="Controls\ResourceKeys.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceSentry.Armor\ServiceSentry.Armor.csproj">
+      <Project>{F2896144-9BF1-4229-9EF3-5061444DBA38}</Project>
+      <Name>ServiceSentry.Armor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Images\ServiceTogglingIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Images\LoggerIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\ExtensionStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Styles\Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Styles\CommonControlStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Styles\ToggleButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\ListViewItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Styles\MenuStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Styles\FileHandlingStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>MenuStyles.xaml</DependentUpon>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Styles\MenuItemStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>MenuStyles.xaml</DependentUpon>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Styles\SeparatorStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>MenuStyles.xaml</DependentUpon>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Styles\ServiceGroupMenuStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>MenuStyles.xaml</DependentUpon>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Styles\TabStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Styles\TabControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>TabStyles.xaml</DependentUpon>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Styles\TabItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>TabStyles.xaml</DependentUpon>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Styles\TabMargins.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>TabStyles.xaml</DependentUpon>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Icons\ApplicationIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Large\ApplicationLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Icons\MonitorNotAvailableIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Images\ApplicationIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Medium\Debug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Medium\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Medium\Exception.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Medium\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Medium\Fatal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Medium\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Medium\MonoException.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Medium\Trace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Medium\Warn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Small\Debug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Small\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Small\Exception.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Small\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Small\Fatal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Small\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Small\MonoException.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Small\RestartService.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Small\StartService.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Small\StopService.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Small\Trace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\Small\Warn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>echo f | xcopy /Y /f "$(TargetPath)" "$(SolutionDir)build\$(ConfigurationName)" &gt;nul</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

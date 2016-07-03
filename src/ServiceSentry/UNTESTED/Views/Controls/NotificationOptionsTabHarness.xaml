@@ -1,0 +1,190 @@
+﻿<Window x:Class="ServiceSentry.Client.UNTESTED.Views.Controls.NotificationOptionsTabHarness"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:mail="clr-namespace:System.Net.Mail;assembly=System" 
+        xmlns:client="clr-namespace:ServiceSentry.Client">
+<Grid>
+    <TabControl x:Name="Harness">
+        <TabControl.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Styles/TabStyles.xaml" />
+                    
+                    </ResourceDictionary.MergedDictionaries>
+                    <!--<BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />-->
+                
+
+                    <ObjectDataProvider x:Key="DeliveryMethods" MethodName="GetValues"
+                            ObjectType="{x:Type system:Enum}">
+                        <ObjectDataProvider.MethodParameters>
+                            <x:Type TypeName="mail:SmtpDeliveryMethod"/>
+                        </ObjectDataProvider.MethodParameters>
+                    </ObjectDataProvider>
+                </ResourceDictionary>
+            </TabControl.Resources>
+            <TabItem Header="{x:Static client:Strings.NotificationOptions_Header}" Name="NotificationOptionsTab">
+                <TabItem.Style>
+                    <StaticResourceExtension ResourceKey="TabItemStyle" />
+                </TabItem.Style>
+                <TabItem.Resources>
+                    <SolidColorBrush x:Key="SeparatorStroke" Color="DarkGray" />
+                </TabItem.Resources>
+                
+                <Grid x:Name="LayoutRoot">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition MaxHeight="10" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition MaxHeight="25" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="1" Grid.ColumnSpan="2"
+            HorizontalAlignment="Left" Margin="5" Style="{DynamicResource TitleLabel}" VerticalAlignment="Top" TextWrapping="Wrap" 
+                               Text="{x:Static client:Strings.NotificationOptions_EmailNotifications}" />
+
+                    <!-- Should Email-->
+                    <TextBlock Grid.Row="2" Margin="5" Grid.ColumnSpan="2"
+                               Style="{DynamicResource DefaultLabel}" TextWrapping="Wrap" Height="Auto" VerticalAlignment="Top" 
+                               Text="{x:Static client:Strings.NotificationOptions_EmailNotifications_Description}"
+                               />
+            
+                    <CheckBox Grid.Row="3" Margin="5" 
+                              Grid.ColumnSpan="2"
+                              VerticalAlignment="Top" x:Name="ShouldEmailNotify"
+                              IsChecked="{Binding ShouldEmail, Mode=TwoWay}">
+                        <TextBlock Style="{DynamicResource DefaultLabel}" TextWrapping="Wrap" 
+                                   Text="{x:Static client:Strings.NotificationOptions_EmailNotifications_Checkbox}" />
+                    </CheckBox>
+
+                    <!-- Email Info -->
+                    <Grid Grid.Row="4" Grid.Column="1"
+                          IsEnabled="{Binding ElementName=ShouldEmailNotify, Path=IsChecked}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="1" 
+                              VerticalAlignment="Center" HorizontalAlignment="Right"
+                                   Style="{DynamicResource DefaultLabel}" TextWrapping="Wrap" 
+                                   Text="{x:Static client:Strings.Header_AdministratorEmail}" />
+
+                        <TextBlock Grid.Row="1" Grid.Column="1" 
+                              VerticalAlignment="Center" HorizontalAlignment="Right"
+                                   Style="{DynamicResource DefaultLabel}" TextWrapping="Wrap" 
+                                   Text="{x:Static client:Strings.Header_MaxEmailsPerMinute}" />
+
+                        <TextBlock Grid.Row="2" Grid.Column="1" 
+                              VerticalAlignment="Center" HorizontalAlignment="Right"
+                                   Style="{DynamicResource DefaultLabel}" TextWrapping="Wrap" 
+                                   Text="{x:Static client:Strings.Header_MaxEmailsPerDay}" />
+
+                        <TextBox Grid.Row="0" Grid.Column="3" x:Name="AdministratorEmail" 
+                                 Margin="5" VerticalAlignment="Center" 
+                                 BorderBrush="DarkGray" BorderThickness="1" Text="{Binding AdministratorEmail}"
+                                 />
+
+                        <TextBox Grid.Row="1" Grid.Column="3" x:Name="MaxEmailsPerMinute" 
+                                 Margin="5" VerticalAlignment="Center" 
+                                 BorderBrush="DarkGray" BorderThickness="1" Text="{Binding MaxEmailsPerMinute}"
+                                 />
+                        <TextBox Grid.Row="2" Grid.Column="3" x:Name="MaxEmailsPerDay" 
+                                 Margin="5" VerticalAlignment="Center"
+                                 BorderBrush="DarkGray" BorderThickness="1" Text="{Binding MaxEmailsPerDay}"
+                                 />
+                    </Grid>
+
+
+                    <!-- Separator -->
+                    <Rectangle Grid.Row="5" Grid.ColumnSpan="2" Fill="DarkGray" Height="3" Margin="20,0"/>
+
+                    <!-- SMTP Details -->
+                    <Grid x:Name="SmtpInfoGrid" Grid.Row="6" Grid.ColumnSpan="2"
+                          IsEnabled="{Binding ElementName=ShouldEmailNotify, Path=IsChecked}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        
+                        
+                        <TextBlock Grid.Row="1" Grid.ColumnSpan="2"
+                HorizontalAlignment="Left" Margin="5" Style="{DynamicResource TitleLabel}" VerticalAlignment="Top" TextWrapping="Wrap"
+                                   Text="{x:Static client:Strings.NotificationOptions_SMTPInfo}" />
+
+                        <TextBlock Grid.Row="2" Margin="5"
+                            Style="{DynamicResource DefaultLabel}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Right"
+                                   Text="{x:Static client:Strings.NotificationOptions_SendingEmailAddress}"/>
+                        
+                        <TextBox Grid.Row="2" Grid.Column="1"
+                            Margin="5" BorderBrush="DarkGray" BorderThickness="1" Text="{Binding EmailSenderAddress}" />
+
+
+
+                        <TextBlock Grid.Row="3"
+                            Style="{DynamicResource DefaultLabel}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Right"
+                                   Text="{x:Static client:Strings.NotificationOptions_HostName}"/>
+                        <TextBox Grid.Row="3" Grid.Column="1"
+                                Margin="5" BorderBrush="DarkGray" BorderThickness="1" Text="{Binding SMTPHostName}" />
+                    
+                    
+                        <TextBlock Grid.Row="4" Margin="5"
+                            Style="{DynamicResource DefaultLabel}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Right" 
+                                   Text="{x:Static client:Strings.NotificationOptions_Port}"/>
+                        <TextBox Grid.Row="4" Grid.Column="1" Margin="5" 
+                                 BorderBrush="{DynamicResource SeparatorStroke}" BorderThickness="1" Text="{Binding SMTPHostPort}" />
+
+                        <TextBlock Grid.Row="5" Margin="5"
+                            Style="{DynamicResource DefaultLabel}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Right"
+                                   Text="{x:Static client:Strings.NotificationOptions_DeliveryMethod}"/>
+                        
+                        <ComboBox Grid.Row="5" Grid.Column="1" Margin="5" 
+                                 BorderBrush="{DynamicResource SeparatorStroke}" BorderThickness="1" 
+                                  ItemsSource="{Binding Source={StaticResource DeliveryMethods}}"
+                                  SelectedItem="{Binding DeliveryMethod}" />
+
+                        <TextBlock Grid.Row="6" Margin="5"
+                            Style="{DynamicResource DefaultLabel}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Right"
+                                   Text="{x:Static client:Strings.NotificationOptions_EnableSSL}"/>
+                        <CheckBox Grid.Row="6" Grid.Column="1" Margin="5" 
+                                 BorderBrush="{DynamicResource SeparatorStroke}" BorderThickness="1" IsChecked="{Binding EnableSsl}" />
+
+                    <!--<TextBlock Grid.Row="7" Margin="5"
+                        Style="{DynamicResource DefaultLabel}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Right">
+                        <Run Text="Use Default Credentials:"/>
+                    </TextBlock>
+                    <CheckBox Grid.Row="7" Grid.Column="1" Margin="5" 
+                             BorderBrush="{DynamicResource SeparatorStroke}" BorderThickness="1" IsChecked="{Binding UseDefaultCredentials}" />-->
+
+                    <!--<Border Grid.Row="8" Margin="5 10" BorderBrush="DarkGray" BorderThickness="1" Grid.ColumnSpan="2" />-->
+       
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

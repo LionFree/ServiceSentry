@@ -1,0 +1,39 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--<Image x:Key="RestartServiceIcon" x:Shared="False" Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Images/Small/RestartService.png" />-->
+
+    
+    <BitmapImage x:Key="LoggerImageTraceKey" x:Shared="False" 
+           RenderOptions.BitmapScalingMode="HighQuality"
+           UriSource="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Images/Small/Trace.png" />
+
+    <BitmapImage x:Key="LoggerImageDebugKey" x:Shared="False" 
+           RenderOptions.BitmapScalingMode="HighQuality"
+           UriSource="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Images/Small/Debug.png" />
+
+    <BitmapImage x:Key="LoggerImageInfoKey" x:Shared="False" 
+           RenderOptions.BitmapScalingMode="HighQuality"
+           UriSource="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Images/Small/Info.png" />
+    
+    <BitmapImage x:Key="LoggerImageWarnKey" x:Shared="False" 
+           RenderOptions.BitmapScalingMode="HighQuality"
+           UriSource="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Images/Small/Warn.png" />
+
+    <BitmapImage x:Key="LoggerImageErrorKey" x:Shared="False"
+           RenderOptions.BitmapScalingMode="HighQuality"
+           UriSource="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Images/Small/Error.png" />
+
+    <BitmapImage x:Key="LoggerImageFatalKey" x:Shared="False" 
+           RenderOptions.BitmapScalingMode="HighQuality"
+           UriSource="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Images/Small/Fatal.png" />
+
+    <BitmapImage x:Key="LoggerImageExceptionKey" x:Shared="False" 
+           RenderOptions.BitmapScalingMode="HighQuality"
+           UriSource="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Images/Small/Exception.png" />
+
+    <BitmapImage x:Key="LoggerImageExceptionMonoKey" x:Shared="False" 
+           RenderOptions.BitmapScalingMode="HighQuality"
+           UriSource="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Images/Small/MonoException.png" />
+
+</ResourceDictionary>

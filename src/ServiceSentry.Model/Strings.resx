@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Archive_DateTime" xml:space="preserve">
+    <value>ddMMMyyyy - HHmmss</value>
+  </data>
+  <data name="Debug_HandlingStop" xml:space="preserve">
+    <value>Handling Stop: {0}</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="DefaultServiceGroupName" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Error_AcquiringNewClient" xml:space="preserve">
+    <value>Acquiring new client for service '{0}' on {1}.</value>
+    <comment>0 = service name, 1 = machine name</comment>
+  </data>
+  <data name="Error_CommunicationFaulted" xml:space="preserve">
+    <value>Communication Faulted.  Acquiring new client for service '{0}' on {1}.</value>
+    <comment>0 = service name, 1 = machine name</comment>
+  </data>
+  <data name="Error_CouldNotAttach1" xml:space="preserve">
+    <value>Could not attach {0}</value>
+  </data>
+  <data name="Error_CouldNotAttach2" xml:space="preserve">
+    <value> because it is being used by another process</value>
+  </data>
+  <data name="Error_CouldNotGenerateClientMediator" xml:space="preserve">
+    <value>Could not generate client mediator for service {0}\{1}.</value>
+    <comment>0 = machine name, 1 = service name</comment>
+  </data>
+  <data name="Error_FileNotFound" xml:space="preserve">
+    <value>File not found: "{0}"</value>
+    <comment>0 = file path</comment>
+  </data>
+  <data name="Error_ServiceDidNotRestart" xml:space="preserve">
+    <value>'{0}' service did not restart.</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Error_ServiceNotInDesiredStatus" xml:space="preserve">
+    <value>'{0}' service is not {1}.</value>
+    <comment>0 = service name, 1 = desired ServiceState</comment>
+  </data>
+  <data name="Error_ServiceNotStarted" xml:space="preserve">
+    <value>'{0}' service NOT started.</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Error_ServiceNotStartedLocally" xml:space="preserve">
+    <value>{0} service NOT started via local controller.</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Error_ServiceNotStoppedLocally" xml:space="preserve">
+    <value>{0} service NOT stopped via local controller.</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Error_ServiceNotStoppedRemotely" xml:space="preserve">
+    <value>{0} service NOT stopped via Monitor service.</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Error_ServiceWontToggle" xml:space="preserve">
+    <value>'{0}' service not toggling: perhaps a prerequisite service is stopped?</value>
+  </data>
+  <data name="EXCEPTION_FromCannotBeNull" xml:space="preserve">
+    <value>emailInfo.From cannot be null.</value>
+  </data>
+  <data name="EXCEPTION_InvalidServiceControllerStatus" xml:space="preserve">
+    <value>Invalid ServiceControllerStatus.</value>
+  </data>
+  <data name="EXCEPTION_InvalidServiceState" xml:space="preserve">
+    <value>Invalid ServiceState.</value>
+  </data>
+  <data name="EXCEPTION_PathIsEmpty" xml:space="preserve">
+    <value>Path is empty.</value>
+  </data>
+  <data name="EXCEPTION_StoppingService" xml:space="preserve">
+    <value>EXCEPTION encountered while stopping service: {0}</value>
+    <comment>0 = exception details</comment>
+  </data>
+  <data name="Header_DisplayName" xml:space="preserve">
+    <value>Service Display Name: </value>
+  </data>
+  <data name="Header_MachineName" xml:space="preserve">
+    <value>Machine Name: </value>
+  </data>
+  <data name="Header_ServiceName" xml:space="preserve">
+    <value>Service Name: </value>
+  </data>
+  <data name="Header_TimeStamp" xml:space="preserve">
+    <value>Timestamp: </value>
+  </data>
+  <data name="Info_ClearingLogs" xml:space="preserve">
+    <value>Clearing logs.</value>
+  </data>
+  <data name="Info_CreatingArchive" xml:space="preserve">
+    <value>Creating archive: {0}</value>
+    <comment>0 = archive (zip) file path</comment>
+  </data>
+  <data name="Info_Done" xml:space="preserve">
+    <value>Done.</value>
+    <comment>as in, "operation complete"</comment>
+  </data>
+  <data name="Info_ExistingLogFilesAttached" xml:space="preserve">
+    <value>Existing log files are attached</value>
+  </data>
+  <data name="Info_IgnoringLogs" xml:space="preserve">
+    <value>Ignoring logs.</value>
+  </data>
+  <data name="Info_InstallingWindowsService" xml:space="preserve">
+    <value>Installing '{0}' service.</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Info_LogFilesAttached" xml:space="preserve">
+    <value>Log files are attached</value>
+  </data>
+  <data name="Info_LoggerAttachedToService" xml:space="preserve">
+    <value>Logger attached to service '{0}'.</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Info_LogsDoNotExist" xml:space="preserve">
+    <value>Log files were specified, but do not exist</value>
+  </data>
+  <data name="Info_NoLogFilesSpecified" xml:space="preserve">
+    <value>No log files were specified</value>
+  </data>
+  <data name="Info_RespondingToStoppedService" xml:space="preserve">
+    <value>Responding to stopped service: {0}</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Info_SendCompleted" xml:space="preserve">
+    <value>Send completed.</value>
+  </data>
+  <data name="Info_SendingEmail" xml:space="preserve">
+    <value>Sending email to: '{0}'.</value>
+    <comment>0 = email address</comment>
+  </data>
+  <data name="Info_ServiceAlreadyRunning" xml:space="preserve">
+    <value>Service is already running: {0}</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Info_ServiceStarted" xml:space="preserve">
+    <value>'{0}' service started.</value>
+  </data>
+  <data name="Info_ServiceStartedLocally" xml:space="preserve">
+    <value>{0} service started via local controller.</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Info_ServiceStopped" xml:space="preserve">
+    <value>Service stopped: {0}</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Info_ServiceStoppedLocally" xml:space="preserve">
+    <value>{0} service stopped via local controller.</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Info_ServiceStoppedRemotely" xml:space="preserve">
+    <value>{0} service stopped via Monitor service.</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Info_ServiceStoppedUnexpectedly" xml:space="preserve">
+    <value>The '{0}' service {1}stopped unexpectedly.</value>
+    <comment>0 = ServiceName, 1 = CommonName, if it exists, otherwise DisplayName</comment>
+  </data>
+  <data name="Info_ServiceStoppedUnexpectedly1" xml:space="preserve">
+    <value>("{0}") </value>
+    <comment>0 = CommonName, if it exists, otherwise DisplayName</comment>
+  </data>
+  <data name="Info_ServiceStoppedUnexpectedlyOnMachine" xml:space="preserve">
+    <value>'{0}' service stopped unexpectedly on {1}</value>
+    <comment>0 = Common/DisplayName, 1 = MachineName</comment>
+  </data>
+  <data name="Info_StartingService" xml:space="preserve">
+    <value>Starting service: {0}</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Info_StoppingService" xml:space="preserve">
+    <value>Stopping service: {0}</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Info_Subscribed" xml:space="preserve">
+    <value>Subscribed to '{0}'.</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Info_SubscribingToService" xml:space="preserve">
+    <value>Subscribing to '{0}' service.</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Info_SubscriptionUpdated" xml:space="preserve">
+    <value>Subscription updated: {0}</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Info_Unsubscribed" xml:space="preserve">
+    <value>Unsubscribed from '{0}'.</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Info_UnsubscribingFromService" xml:space="preserve">
+    <value>Unsubscribing from '{0}' service.</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Info_UpdatingSubscription" xml:space="preserve">
+    <value>Updating subscription: {0}</value>
+    <comment>0 = service name</comment>
+  </data>
+  <data name="Info_WritingConfigFile" xml:space="preserve">
+    <value>Writing config file: {0}</value>
+    <comment>0 = config file path</comment>
+  </data>
+  <data name="Noun_SentenceTerminator" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="RelayCommand_Command_name_cannot_be_an_empty_string" xml:space="preserve">
+    <value>Command name cannot be an empty string.</value>
+  </data>
+  <data name="Trace_RaisingEvent" xml:space="preserve">
+    <value>Raising event '{0}'.</value>
+    <comment>0 = name of event being raised</comment>
+  </data>
+  <data name="Trace_SettingTrackingObjectKey" xml:space="preserve">
+    <value>Setting TrackingObject key: '{0}'.</value>
+    <comment>0 = TrackingObject key.</comment>
+  </data>
+  <data name="Warn_ReceivedExceptionsFromMonitor" xml:space="preserve">
+    <value>Received {0} exceptions from the monitor.</value>
+    <comment>0 = # of exceptions received</comment>
+  </data>
+  <data name="_CompanyName" xml:space="preserve">
+    <value>Curtis Kaler</value>
+  </data>
+  <data name="_ApplicationName" xml:space="preserve">
+    <value>ServiceSentry</value>
+  </data>
+</root>

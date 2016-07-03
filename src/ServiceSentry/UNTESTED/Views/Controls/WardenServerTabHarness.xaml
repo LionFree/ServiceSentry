@@ -1,0 +1,169 @@
+﻿<Window x:Class="ServiceSentry.Client.UNTESTED.Views.Controls.WardenOptionsTabHarness"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:client="clr-namespace:ServiceSentry.Client"
+        xmlns:controls="clr-namespace:ServiceSentry.Client.UNTESTED.Views.Controls"
+
+        SizeToContent="Height">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/ServiceSentry.Extensibility;component/Themes/Styles/TabStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Window.Background>
+        <StaticResource ResourceKey="WindowBackgroundColor" />
+    </Window.Background>
+    
+    <Grid>
+        <TabControl x:Name="RootTabs">
+            <TabItem x:Name="WardenOptionsTab" 
+                     Header="{x:Static client:Strings.Title_WardenOptions}"
+                     Style="{StaticResource TabItemStyle}">
+                <TabItem.Resources>
+                    <SolidColorBrush x:Key="SeparatorStroke" Color="DarkGray" />
+                </TabItem.Resources>
+
+                <Grid x:Name="LayoutRoot">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition MaxHeight="25" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="1" Grid.ColumnSpan="2"
+                HorizontalAlignment="Left" Margin="5" Style="{DynamicResource TitleLabel}" VerticalAlignment="Top" TextWrapping="Wrap"
+                                   Text="{x:Static client:Strings.Title_WardenOptions}" />
+
+                    <TextBlock Grid.Row="2" Grid.ColumnSpan="2"
+                                   Margin="5" Style="{DynamicResource DefaultLabel}" TextWrapping="Wrap"
+                               Height="Auto" VerticalAlignment="Top"
+                               Text="{x:Static client:Strings.WardenOptions_Server_Description}" />
+
+                    <CheckBox Grid.Row="3" Grid.ColumnSpan="2" Margin="5" 
+                              VerticalAlignment="Top" x:Name="ShouldUpdateWarden"
+                              IsChecked="{Binding WardenEnabled, Mode=TwoWay}">
+                        <TextBlock Style="{DynamicResource DefaultLabel}" TextWrapping="Wrap" 
+                                   Text="{x:Static client:Strings.WardenOptions_UpdateWarden_Checkbox}" />
+                    </CheckBox>
+
+                    <Grid x:Name="WardenInfoGrid" Grid.Row="4" Grid.ColumnSpan="2"
+                          IsEnabled="{Binding ElementName=ShouldUpdateWarden, Path=IsChecked}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock   Grid.Row="0"  Grid.Column="0" Margin="15,5"
+                            Style="{DynamicResource DefaultLabel}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Right"
+                                   Text="{x:Static client:Strings.NotificationOptions_HostName}"/>
+                        <TextBox x:Name="HostNameBox" Grid.Row="0" Grid.Column="1"
+                                Margin="5" BorderBrush="DarkGray" BorderThickness="1" 
+                                 Text="{Binding HostName, UpdateSourceTrigger=PropertyChanged}" />
+
+
+                        <TextBlock Grid.Row="1" Grid.Column="0" Margin="15,5"
+                            Style="{DynamicResource DefaultLabel}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Right" 
+                                   Text="{x:Static client:Strings.NotificationOptions_Port}"/>
+
+
+                        
+
+                        <TextBox Grid.Row="1" Grid.Column="1" Margin="5"
+                                     BorderBrush="{DynamicResource SeparatorStroke}" BorderThickness="1" 
+                                     >
+                            <TextBox.Text>
+                                <Binding Path="Port" UpdateSourceTrigger="PropertyChanged">
+                                    <Binding.ValidationRules>
+                                        <controls:PortRule Min="0" Max="65535" />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                            
+                            <Validation.ErrorTemplate>
+                                <ControlTemplate>
+                                    <StackPanel>
+                                        <DockPanel VerticalAlignment="Center">
+                                            <TextBlock Foreground="Red" Margin="5" 
+                                                       VerticalAlignment="Center"
+                                                       FontSize="16" FontWeight="Bold"
+                                                       Text="{x:Static client:Strings.Validation_FAIL}"/>
+                                            <AdornedElementPlaceholder VerticalAlignment="Center"/>
+                                        </DockPanel>
+                                        <Border Background="{StaticResource PopupBackgroundBrush}"
+                                                CornerRadius="5"
+                                                BorderBrush="DarkGray"
+                                                BorderThickness="1">
+                                            <TextBlock Margin="5"
+                                                Text="{Binding .CurrentItem.ErrorContent}" 
+                                                       Foreground="Red" />
+                                        </Border>
+                                    </StackPanel>
+                                </ControlTemplate>
+                            </Validation.ErrorTemplate>
+
+                            
+
+                        </TextBox>
+
+                        
+                        
+                        <TextBlock Grid.Row="2" Grid.Column="0" Margin="15,5"
+                                   Style="{DynamicResource DefaultLabel}" HorizontalAlignment="Right" 
+                                   Text="{x:Static client:Strings.Header_WebAddress}"/>
+
+                        <Border Grid.Row="2" Grid.Column="1" Margin="5"
+                                Background="{StaticResource WindowBackgroundColor}"
+                                CornerRadius="3"
+                                Opacity=".75">
+                            <TextBox MinWidth="{Binding ElementName=HostNameBox, Path=ActualWidth}"
+                                     HorizontalAlignment="Left" 
+                                     BorderBrush="Transparent"
+                                     Background="Transparent"
+                                     IsReadOnly="True"
+                                     TextWrapping="Wrap"
+                                     Text="{Binding WebAddress, Mode=OneWay}"/>
+                        </Border>
+
+                        <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" Margin="5" 
+                                    Content="{x:Static client:Strings.ButtonText_TestWarden}"
+                                    Command="{Binding TestWardenCommand}"
+                                    />
+                            
+                            <Button Grid.Column="1" Margin="5" 
+                                    Content="{x:Static client:Strings.ButtonText_OpenWarden}"
+                                    IsEnabled="{Binding WardenAvailable}"
+                                    Command="{Binding OpenWardenCommand}"
+                                    />
+                        </Grid>
+                        
+                    </Grid>
+
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

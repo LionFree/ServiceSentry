@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup Label="UserMacros">
+		<ProjectOrAssemblyName Condition="'$(AssemblyName)'==''">$(ProjectName)</ProjectOrAssemblyName>
+		<ProjectOrAssemblyName Condition="'$(ProjectName)'==''">$(AssemblyName)</ProjectOrAssemblyName>
+
+		<ShortPlatform>x86</ShortPlatform>
+		<ShortPlatform Condition="'$(Platform)'=='Any CPU'">x86</ShortPlatform>
+		<ShortPlatform Condition="'$(Platform)'=='x64'">x64</ShortPlatform>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<DriveRoot>C:</DriveRoot>
+		<BasePath>$(DriveRoot)\Temp.VS\$(SolutionName)\$(ShortPlatform)\</BasePath>
+    <BuildPath>$(BasePath)\Build\</BuildPath>
+    <TestPath>$(BasePath)\UnitTests\</TestPath>
+		<DistroPath>$(BasePath)\Distro\</DistroPath>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<OutputPath>$(BuildPath)</OutputPath>
+		<OutputPath Condition =" '$(OutputType)' == 'Library' ">$(BuildPath)</OutputPath>
+		<OutputPath Condition =" '$(OutputType)' == 'Exe' ">$(BuildPath)</OutputPath>
+		<OutputPath Condition =" '$(OutputType)' == 'WinExe' ">$(BuildPath)</OutputPath>
+		<OutputPath Condition =" '$(OutputType)' == 'Package' ">$(DistroPath)</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<!-- Leave this last -->
+		<OutputPath Condition =" '$(TestProjectType)' == 'UnitTest' ">$(TestPath)</OutputPath>
+
+		<BaseIntermediateOutputPath>$(OutputPath)obj\$(AssemblyName)\</BaseIntermediateOutputPath>
+		<IntermediateOutputPath Condition=" '$(PlatformName)' == 'AnyCPU' ">$(BaseIntermediateOutputPath)\</IntermediateOutputPath>
+		<IntermediateOutputPath Condition=" '$(PlatformName)' != 'AnyCPU' ">$(BaseIntermediateOutputPath)$(PlatformName)\</IntermediateOutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+		<DebugType>full</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+		<Optimize>false</Optimize>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<DebugType>pdbonly</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+		<Optimize>true</Optimize>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<DefineConstants>TRACE</DefineConstants>
+	</PropertyGroup>
+	
+</Project>
