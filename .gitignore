@@ -14,7 +14,7 @@
 
 # NuGet Packages #
 ##################
-/packages/
+/src/packages/
 
 
 # Packages #
