@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceSentry.ConfigFile xmlns:i="http://www.w3.org/2001/XMLSchema-instance" z:Id="1" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns="http://schemas.datacontract.org/2004/07/ServiceSentry.Model">
+  <DebugLogConfiguration xmlns:d2p1="http://schemas.datacontract.org/2004/07/ServiceSentry.Extensibility.Logging" z:Id="2" i:type="d2p1:LogConfiguration.LogConfigImplementation">
+    <d2p1:FileNameFormat z:Id="3">{0}.{1}.log</d2p1:FileNameFormat>
+    <d2p1:FormattingOptionStrings xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="4" z:Size="2">
+      <d3p1:string z:Id="5">AssemblyName</d3p1:string>
+      <d3p1:string z:Id="6">SortableDate</d3p1:string>
+    </d2p1:FormattingOptionStrings>
+    <d2p1:Levels z:Id="7" i:type="d2p1:EnabledLevels.EnabledLevelsImplementation">
+      <d2p1:Debug>true</d2p1:Debug>
+      <d2p1:Error>true</d2p1:Error>
+      <d2p1:Fatal>true</d2p1:Fatal>
+      <d2p1:Info>true</d2p1:Info>
+      <d2p1:Trace>true</d2p1:Trace>
+      <d2p1:Warn>true</d2p1:Warn>
+    </d2p1:Levels>
+    <d2p1:LogFolder z:Id="8">C:\Users\curtis.kaler\Documents\Visual Studio 2012\Projects\ServiceSentry\Source\Build\Release\</d2p1:LogFolder>
+  </DebugLogConfiguration>
+  <LogSettings z:Id="9" i:type="LoggingDetails.ImplementedLoggingDetails">
+    <ArchiveLogs>false</ArchiveLogs>
+    <ArchivePath z:Id="10">C:\Services_%TS%.zip</ArchivePath>
+    <ClearLogs>false</ClearLogs>
+  </LogSettings>
+  <NotificationSettings z:Id="11" i:type="NotificationSettings.ImplementedNotificationSettings">
+    <EmailInfo xmlns:d3p1="http://schemas.datacontract.org/2004/07/ServiceSentry.Common.Email" z:Id="12" i:type="d3p1:EmailInfo.EmailInfoImplementation">
+      <d3p1:BodyEncoding z:Id="13">utf-8</d3p1:BodyEncoding>
+      <d3p1:CC xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="14" z:Size="0" />
+      <d3p1:From z:Id="15"></d3p1:From>
+      <d3p1:IsBodyHtml>false</d3p1:IsBodyHtml>
+      <d3p1:Priority>High</d3p1:Priority>
+      <d3p1:ReplyTo z:Ref="15" i:nil="true" />
+      <d3p1:SenderAddress z:Ref="15" i:nil="true" />
+      <d3p1:To xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="16" z:Size="0" />
+    </EmailInfo>
+    <EmailOnUnexpectedStop>false</EmailOnUnexpectedStop>
+    <SMTPInfo xmlns:d3p1="http://schemas.datacontract.org/2004/07/ServiceSentry.Common.Email" z:Id="17" i:type="d3p1:SMTPInfo.SMTPInfoImplementation">
+      <d3p1:Credentials i:nil="true" />
+      <d3p1:DeliveryMethod>Network</d3p1:DeliveryMethod>
+      <d3p1:EnableSsl>false</d3p1:EnableSsl>
+      <d3p1:HostName z:Ref="15" i:nil="true" />
+      <d3p1:MaxMailsPerDay>0</d3p1:MaxMailsPerDay>
+      <d3p1:MaxMailsPerMinute>0</d3p1:MaxMailsPerMinute>
+      <d3p1:PickupDirectoryLocation z:Ref="15" i:nil="true" />
+      <d3p1:Port>0</d3p1:Port>
+      <d3p1:UseDefaultCredentials>false</d3p1:UseDefaultCredentials>
+    </SMTPInfo>
+  </NotificationSettings>
+  <OtherLogs z:Id="18" i:type="FileList.ImplementedFileList">
+    <ExternalFiles z:Id="19" z:Size="0" />
+  </OtherLogs>
+  <ServiceList z:Id="20" i:type="ServiceList.ImplementedServiceList">
+    <Services z:Id="21" z:Size="0" />
+  </ServiceList>
+</ServiceSentry.ConfigFile>
